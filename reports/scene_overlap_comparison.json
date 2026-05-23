@@ -1,0 +1,809 @@
+{
+  "top_k": 10,
+  "old_link_overlap_matrix": {
+    "cafe": {
+      "cafe": 1.0,
+      "gym": 0.0,
+      "study_room": 0.0526,
+      "night_street": 0.0,
+      "mountain": 0.0
+    },
+    "gym": {
+      "cafe": 0.0,
+      "gym": 1.0,
+      "study_room": 0.0,
+      "night_street": 0.0,
+      "mountain": 0.0
+    },
+    "study_room": {
+      "cafe": 0.0526,
+      "gym": 0.0,
+      "study_room": 1.0,
+      "night_street": 0.0,
+      "mountain": 0.0
+    },
+    "night_street": {
+      "cafe": 0.0,
+      "gym": 0.0,
+      "study_room": 0.0,
+      "night_street": 1.0,
+      "mountain": 0.0
+    },
+    "mountain": {
+      "cafe": 0.0,
+      "gym": 0.0,
+      "study_room": 0.0,
+      "night_street": 0.0,
+      "mountain": 1.0
+    }
+  },
+  "new_link_overlap_matrix": {
+    "cafe": {
+      "cafe": 1.0,
+      "study_room": 0.0,
+      "gym": 0.0,
+      "night_street": 0.0,
+      "mountain": 0.0
+    },
+    "study_room": {
+      "cafe": 0.0,
+      "study_room": 1.0,
+      "gym": 0.0,
+      "night_street": 0.0,
+      "mountain": 0.0526
+    },
+    "gym": {
+      "cafe": 0.0,
+      "study_room": 0.0,
+      "gym": 1.0,
+      "night_street": 0.0,
+      "mountain": 0.0
+    },
+    "night_street": {
+      "cafe": 0.0,
+      "study_room": 0.0,
+      "gym": 0.0,
+      "night_street": 1.0,
+      "mountain": 0.0
+    },
+    "mountain": {
+      "cafe": 0.0,
+      "study_room": 0.0526,
+      "gym": 0.0,
+      "night_street": 0.0,
+      "mountain": 1.0
+    }
+  },
+  "old_mean_off_diagonal": 0.00526,
+  "new_mean_off_diagonal": 0.00526,
+  "improvement": 0.0,
+  "old_per_scene_details": {
+    "cafe": {
+      "top_songs": [
+        {
+          "title": "Shallow - Radio Edit",
+          "artist": "Lady Gaga",
+          "genre": "pop",
+          "final_score": 0.9422
+        },
+        {
+          "title": "Feeling Good",
+          "artist": "Michael Bublé",
+          "genre": "r&b",
+          "final_score": 0.9326
+        },
+        {
+          "title": "My Favorite Part",
+          "artist": "Mac Miller",
+          "genre": "r&b",
+          "final_score": 0.9326
+        },
+        {
+          "title": "Happy",
+          "artist": "Oh Wonder",
+          "genre": "pop",
+          "final_score": 0.9261
+        },
+        {
+          "title": "C U Girl",
+          "artist": "Steve Lacy",
+          "genre": "r&b",
+          "final_score": 0.9305
+        },
+        {
+          "title": "Lover Boy",
+          "artist": "Phum Viphurit",
+          "genre": "pop",
+          "final_score": 0.9229
+        },
+        {
+          "title": "Daughters",
+          "artist": "John Mayer",
+          "genre": "r&b",
+          "final_score": 0.9303
+        },
+        {
+          "title": "Hurt Somebody",
+          "artist": "Noah Kahan",
+          "genre": "pop",
+          "final_score": 0.9078
+        },
+        {
+          "title": "Better Half of Me",
+          "artist": "Tom Walker",
+          "genre": "r&b",
+          "final_score": 0.9302
+        },
+        {
+          "title": "Faith (with Dolly Parton) [feat. Mr. Probz] - Acoustic",
+          "artist": "Galantis",
+          "genre": "pop",
+          "final_score": 0.892
+        }
+      ]
+    },
+    "gym": {
+      "top_songs": [
+        {
+          "title": "Animal I Have Become",
+          "artist": "Three Days Grace",
+          "genre": "rock",
+          "final_score": 0.9389
+        },
+        {
+          "title": "Two 1 Two",
+          "artist": "Kiddo Toto",
+          "genre": "rap",
+          "final_score": 0.9192
+        },
+        {
+          "title": "Get Dirty",
+          "artist": "Brooke Evers",
+          "genre": "edm",
+          "final_score": 0.9095
+        },
+        {
+          "title": "Brand New Numb",
+          "artist": "Motionless In White",
+          "genre": "rock",
+          "final_score": 0.9219
+        },
+        {
+          "title": "30 Bandido!",
+          "artist": "Costa Gold",
+          "genre": "rap",
+          "final_score": 0.9139
+        },
+        {
+          "title": "Rinse & Repeat - Radio Edit",
+          "artist": "Riton",
+          "genre": "edm",
+          "final_score": 0.8999
+        },
+        {
+          "title": "Si No Fue Asi",
+          "artist": "Midel",
+          "genre": "rap",
+          "final_score": 0.9041
+        },
+        {
+          "title": "Jolie Coquine",
+          "artist": "Caravan Palace",
+          "genre": "edm",
+          "final_score": 0.8986
+        },
+        {
+          "title": "Now That We're Dead",
+          "artist": "Metallica",
+          "genre": "rock",
+          "final_score": 0.8909
+        },
+        {
+          "title": "Vale Vale",
+          "artist": "Alok",
+          "genre": "edm",
+          "final_score": 0.8983
+        }
+      ]
+    },
+    "study_room": {
+      "top_songs": [
+        {
+          "title": "Location",
+          "artist": "Khalid",
+          "genre": "r&b",
+          "final_score": 0.9117
+        },
+        {
+          "title": "In My Life - Remastered 2009",
+          "artist": "The Beatles",
+          "genre": "rock",
+          "final_score": 0.9113
+        },
+        {
+          "title": "How You've Been - Acoustic",
+          "artist": "R3HAB",
+          "genre": "pop",
+          "final_score": 0.8904
+        },
+        {
+          "title": "Easily",
+          "artist": "Bruno Major",
+          "genre": "r&b",
+          "final_score": 0.9112
+        },
+        {
+          "title": "Make It with You",
+          "artist": "Bread",
+          "genre": "rock",
+          "final_score": 0.8951
+        },
+        {
+          "title": "Sunset Lover",
+          "artist": "Petit Biscuit",
+          "genre": "pop",
+          "final_score": 0.8899
+        },
+        {
+          "title": "Gravity",
+          "artist": "John Mayer",
+          "genre": "r&b",
+          "final_score": 0.9105
+        },
+        {
+          "title": "Sometimes When We Touch",
+          "artist": "Dan Hill",
+          "genre": "rock",
+          "final_score": 0.8861
+        },
+        {
+          "title": "C U Girl",
+          "artist": "Steve Lacy",
+          "genre": "r&b",
+          "final_score": 0.9072
+        },
+        {
+          "title": "Enough to Believe",
+          "artist": "Bob Moses",
+          "genre": "pop",
+          "final_score": 0.8649
+        }
+      ]
+    },
+    "night_street": {
+      "top_songs": [
+        {
+          "title": "The Middle",
+          "artist": "Zedd",
+          "genre": "pop",
+          "final_score": 0.9613
+        },
+        {
+          "title": "Don't",
+          "artist": "Bryson Tiller",
+          "genre": "rap",
+          "final_score": 0.9379
+        },
+        {
+          "title": "The News",
+          "artist": "PARTYNEXTDOOR",
+          "genre": "r&b",
+          "final_score": 0.9332
+        },
+        {
+          "title": "i'm so tired...",
+          "artist": "Lauv",
+          "genre": "pop",
+          "final_score": 0.9529
+        },
+        {
+          "title": "GTA",
+          "artist": "Standart Skill",
+          "genre": "rap",
+          "final_score": 0.9234
+        },
+        {
+          "title": "Dapper (feat. Anderson .Paak)",
+          "artist": "Domo Genesis",
+          "genre": "r&b",
+          "final_score": 0.9026
+        },
+        {
+          "title": "Budapest",
+          "artist": "George Ezra",
+          "genre": "pop",
+          "final_score": 0.9386
+        },
+        {
+          "title": "RENT FREE",
+          "artist": "Russ",
+          "genre": "rap",
+          "final_score": 0.9163
+        },
+        {
+          "title": "Just Friends (Sunny)",
+          "artist": "Musiq Soulchild",
+          "genre": "r&b",
+          "final_score": 0.8939
+        },
+        {
+          "title": "The Morning",
+          "artist": "The Weeknd",
+          "genre": "pop",
+          "final_score": 0.9298
+        }
+      ]
+    },
+    "mountain": {
+      "top_songs": [
+        {
+          "title": "Long Train Runnin'",
+          "artist": "The Doobie Brothers",
+          "genre": "rock",
+          "final_score": 0.9207
+        },
+        {
+          "title": "Never Be Lonely (feat. Envy Monroe)",
+          "artist": "Blasterjaxx",
+          "genre": "edm",
+          "final_score": 0.8902
+        },
+        {
+          "title": "Heaven's On Fire",
+          "artist": "KISS",
+          "genre": "rock",
+          "final_score": 0.9047
+        },
+        {
+          "title": "Enjoy the Ride",
+          "artist": "Krewella",
+          "genre": "edm",
+          "final_score": 0.8732
+        },
+        {
+          "title": "Girls Just Want to Have Fun",
+          "artist": "Cyndi Lauper",
+          "genre": "pop",
+          "final_score": 0.8174
+        },
+        {
+          "title": "Soulshine",
+          "artist": "The Allman Brothers Band",
+          "genre": "rock",
+          "final_score": 0.8899
+        },
+        {
+          "title": "You Shook Me All Night Long",
+          "artist": "AC/DC",
+          "genre": "pop",
+          "final_score": 0.8166
+        },
+        {
+          "title": "Focus",
+          "artist": "Blackcode",
+          "genre": "edm",
+          "final_score": 0.835
+        },
+        {
+          "title": "Simply Irresistible",
+          "artist": "Robert Palmer",
+          "genre": "rock",
+          "final_score": 0.8737
+        },
+        {
+          "title": "Black Magic",
+          "artist": "Little Mix",
+          "genre": "pop",
+          "final_score": 0.8106
+        }
+      ]
+    }
+  },
+  "new_per_scene_details": {
+    "cafe": {
+      "top_songs": [
+        {
+          "title": "Shallow",
+          "artist": "Lady Gaga",
+          "genre": "r&b",
+          "final_score": 0.8243
+        },
+        {
+          "title": "Nights",
+          "artist": "Frank Ocean",
+          "genre": "r&b",
+          "final_score": 0.8212
+        },
+        {
+          "title": "Say You Won't Let Go",
+          "artist": "James Arthur",
+          "genre": "pop",
+          "final_score": 0.7812
+        },
+        {
+          "title": "Mandona - Acústico",
+          "artist": "Oriente",
+          "genre": "edm",
+          "final_score": 0.7409
+        },
+        {
+          "title": "Ain't No Sunshine",
+          "artist": "Bill Withers",
+          "genre": "r&b",
+          "final_score": 0.8193
+        },
+        {
+          "title": "Freaking Me Out",
+          "artist": "Ava Max",
+          "genre": "pop",
+          "final_score": 0.7694
+        },
+        {
+          "title": "Stay",
+          "artist": "Post Malone",
+          "genre": "pop",
+          "final_score": 0.7677
+        },
+        {
+          "title": "Coming Home",
+          "artist": "Leon Bridges",
+          "genre": "r&b",
+          "final_score": 0.8023
+        },
+        {
+          "title": "All Time Low",
+          "artist": "Jon Bellion",
+          "genre": "edm",
+          "final_score": 0.715
+        },
+        {
+          "title": "Lo Que Siento",
+          "artist": "Cuco",
+          "genre": "pop",
+          "final_score": 0.7645
+        }
+      ],
+      "feature_importance": {
+        "danceability": 0.126005,
+        "energy": 0.101877,
+        "acousticness": 0.224665,
+        "instrumentalness": 0.17319,
+        "valence": 0.256836,
+        "tempo_norm": 0.117426
+      },
+      "recommendation_reason": "该场景warmth高(0.78)、urban高(0.75)、relaxation高(0.72)，推荐提升 valence，偏柔和舒适风格、提升 pop、r&b、edm、rap 倾向、降低节奏感，提升 acousticness的歌曲，最接近原型场景「cafe」",
+      "genre_priors": {
+        "r&b": 0.5635,
+        "pop": 0.3995,
+        "edm": 0.38,
+        "latin": 0.3785,
+        "rap": 0.3445,
+        "rock": 0.118
+      }
+    },
+    "study_room": {
+      "top_songs": [
+        {
+          "title": "goodbye",
+          "artist": "Billie Eilish",
+          "genre": "r&b",
+          "final_score": 0.7779
+        },
+        {
+          "title": "Nobody Other",
+          "artist": "Kadhja Bonet",
+          "genre": "r&b",
+          "final_score": 0.7264
+        },
+        {
+          "title": "You Don't Know How Lucky You Are",
+          "artist": "Keaton Henson",
+          "genre": "r&b",
+          "final_score": 0.7183
+        },
+        {
+          "title": "Norman fucking Rockwell",
+          "artist": "Lana Del Rey",
+          "genre": "r&b",
+          "final_score": 0.6944
+        },
+        {
+          "title": "Wild Horses",
+          "artist": "Old & In The Way",
+          "genre": "r&b",
+          "final_score": 0.6756
+        },
+        {
+          "title": "Consequences",
+          "artist": "Camila Cabello",
+          "genre": "r&b",
+          "final_score": 0.659
+        },
+        {
+          "title": "Juicy",
+          "artist": "The RH Factor",
+          "genre": "r&b",
+          "final_score": 0.6543
+        },
+        {
+          "title": "Best Part (feat. Daniel Caesar)",
+          "artist": "H.E.R.",
+          "genre": "r&b",
+          "final_score": 0.6538
+        },
+        {
+          "title": "Better Than Today",
+          "artist": "Rhys Lewis",
+          "genre": "r&b",
+          "final_score": 0.6531
+        },
+        {
+          "title": "Moon River",
+          "artist": "Frank Ocean",
+          "genre": "r&b",
+          "final_score": 0.6472
+        }
+      ],
+      "feature_importance": {
+        "danceability": 0.172686,
+        "energy": 0.1559,
+        "acousticness": 0.171923,
+        "instrumentalness": 0.216684,
+        "valence": 0.143693,
+        "tempo_norm": 0.139115
+      },
+      "recommendation_reason": "该场景focus高(0.95)、relaxation高(0.80)、warmth中等(0.55)，推荐降低 energy，提升 instrumentalness、降低节奏感，提升 acousticness、提升 valence，偏柔和舒适风格的歌曲，最接近原型场景「study_room」",
+      "genre_priors": {
+        "r&b": 0.3955,
+        "latin": 0.0605,
+        "edm": 0.0275,
+        "rock": 0.016,
+        "rap": 0.011,
+        "pop": 0.0075
+      }
+    },
+    "gym": {
+      "top_songs": [
+        {
+          "title": "Where Have You Gone (Anywhere)",
+          "artist": "Lucas & Steve",
+          "genre": "edm",
+          "final_score": 0.8575
+        },
+        {
+          "title": "Speechless (feat. Erika Sirola)",
+          "artist": "Robin Schulz",
+          "genre": "pop",
+          "final_score": 0.8127
+        },
+        {
+          "title": "No Sleep (feat. Bonn) - DubVision Remix",
+          "artist": "Martin Garrix",
+          "genre": "edm",
+          "final_score": 0.8512
+        },
+        {
+          "title": "Litty (feat. Tory Lanez)",
+          "artist": "Meek Mill",
+          "genre": "rap",
+          "final_score": 0.798
+        },
+        {
+          "title": "The Spectre",
+          "artist": "Alan Walker",
+          "genre": "pop",
+          "final_score": 0.8047
+        },
+        {
+          "title": "Alone (feat. Anjulie & Jeffrey Jey)",
+          "artist": "Marnik",
+          "genre": "edm",
+          "final_score": 0.8435
+        },
+        {
+          "title": "T.R.U. (Totally Rotten Underground)",
+          "artist": "$uicideBoy$",
+          "genre": "rap",
+          "final_score": 0.7751
+        },
+        {
+          "title": "Green Light",
+          "artist": "Lorde",
+          "genre": "pop",
+          "final_score": 0.8018
+        },
+        {
+          "title": "Keep On Lovin'",
+          "artist": "Cat Dealers",
+          "genre": "edm",
+          "final_score": 0.8382
+        },
+        {
+          "title": "Ghost Ranch",
+          "artist": "Upchurch",
+          "genre": "rap",
+          "final_score": 0.7679
+        }
+      ],
+      "feature_importance": {
+        "danceability": 0.155914,
+        "energy": 0.149194,
+        "acousticness": 0.185484,
+        "instrumentalness": 0.188172,
+        "valence": 0.166667,
+        "tempo_norm": 0.15457
+      },
+      "recommendation_reason": "该场景arousal高(0.95)、socialness高(0.70)、urban中等(0.65)，推荐提升 energy、tempo、danceability、提升流行感、律动感，弱化器乐独奏倾向、提升 pop、r&b、edm、rap 倾向的歌曲，最接近原型场景「gym」",
+      "genre_priors": {
+        "edm": 0.705,
+        "rap": 0.5375,
+        "pop": 0.4875,
+        "latin": 0.48,
+        "rock": 0.3875,
+        "r&b": 0.35
+      }
+    },
+    "night_street": {
+      "top_songs": [
+        {
+          "title": "Save That Shit",
+          "artist": "Lil Peep",
+          "genre": "rap",
+          "final_score": 0.8547
+        },
+        {
+          "title": "Naked",
+          "artist": "James Arthur",
+          "genre": "r&b",
+          "final_score": 0.8439
+        },
+        {
+          "title": "What About Us",
+          "artist": "P!nk",
+          "genre": "edm",
+          "final_score": 0.8234
+        },
+        {
+          "title": "Reply (feat. Lil Uzi Vert)",
+          "artist": "A Boogie Wit da Hoodie",
+          "genre": "rap",
+          "final_score": 0.85
+        },
+        {
+          "title": "Summer Reign (feat. Summer Walker)",
+          "artist": "Rick Ross",
+          "genre": "r&b",
+          "final_score": 0.821
+        },
+        {
+          "title": "Shameless",
+          "artist": "Camila Cabello",
+          "genre": "edm",
+          "final_score": 0.8168
+        },
+        {
+          "title": "Runnin' Thru The 7th With My Woadies",
+          "artist": "$uicideBoy$",
+          "genre": "rap",
+          "final_score": 0.8408
+        },
+        {
+          "title": "Freak in You",
+          "artist": "PARTYNEXTDOOR",
+          "genre": "r&b",
+          "final_score": 0.8188
+        },
+        {
+          "title": "Life Of The Party",
+          "artist": "Shawn Mendes",
+          "genre": "edm",
+          "final_score": 0.8111
+        },
+        {
+          "title": "Get Low",
+          "artist": "Ying Yang Twins",
+          "genre": "rap",
+          "final_score": 0.837
+        }
+      ],
+      "feature_importance": {
+        "danceability": 0.13035,
+        "energy": 0.092218,
+        "acousticness": 0.255642,
+        "instrumentalness": 0.210895,
+        "valence": 0.206226,
+        "tempo_norm": 0.104669
+      },
+      "recommendation_reason": "该场景night高(0.96)、urban高(0.95)、openness中等(0.62)，推荐提升 r&b、chill、synthwave 倾向，valence 可略降、提升 pop、r&b、edm、rap 倾向、适配更铺展、开阔的听感和编排的歌曲，最接近原型场景「night_street」",
+      "genre_priors": {
+        "r&b": 0.6535,
+        "rap": 0.6505,
+        "edm": 0.57,
+        "pop": 0.401,
+        "latin": 0.378,
+        "rock": 0.307
+      }
+    },
+    "mountain": {
+      "top_songs": [
+        {
+          "title": "Please, Please, Please, Let Me Get What I Want - 2011 Remaster",
+          "artist": "The Smiths",
+          "genre": "rock",
+          "final_score": 0.7889
+        },
+        {
+          "title": "You Can't Always Get What You Want",
+          "artist": "The Rolling Stones",
+          "genre": "rock",
+          "final_score": 0.7804
+        },
+        {
+          "title": "C U Girl",
+          "artist": "Steve Lacy",
+          "genre": "r&b",
+          "final_score": 0.7362
+        },
+        {
+          "title": "Horizon",
+          "artist": "Tektrik",
+          "genre": "edm",
+          "final_score": 0.7175
+        },
+        {
+          "title": "Nights In White Satin - Single Version / Mono Mix",
+          "artist": "The Moody Blues",
+          "genre": "rock",
+          "final_score": 0.7792
+        },
+        {
+          "title": "Wild Horses",
+          "artist": "Old & In The Way",
+          "genre": "r&b",
+          "final_score": 0.7325
+        },
+        {
+          "title": "Stripes",
+          "artist": "Ben Esser",
+          "genre": "edm",
+          "final_score": 0.7041
+        },
+        {
+          "title": "Uncle Albert / Admiral Halsey - Medley / Remastered 2012",
+          "artist": "Paul McCartney",
+          "genre": "rock",
+          "final_score": 0.7696
+        },
+        {
+          "title": "Could've Been (feat. Bryson Tiller)",
+          "artist": "H.E.R.",
+          "genre": "r&b",
+          "final_score": 0.7265
+        },
+        {
+          "title": "Give Me Love (Give Me Peace On Earth)",
+          "artist": "George Harrison",
+          "genre": "rock",
+          "final_score": 0.7663
+        }
+      ],
+      "feature_importance": {
+        "danceability": 0.19103,
+        "energy": 0.114203,
+        "acousticness": 0.209718,
+        "instrumentalness": 0.214286,
+        "valence": 0.197674,
+        "tempo_norm": 0.07309
+      },
+      "recommendation_reason": "该场景nature高(0.98)、openness高(0.95)、relaxation中等(0.68)，推荐提升 acoustic、folk、ambient 倾向、适配更铺展、开阔的听感和编排、降低节奏感，提升 acousticness的歌曲，最接近原型场景「mountain」",
+      "genre_priors": {
+        "rock": 0.5005,
+        "edm": 0.255,
+        "r&b": 0.255,
+        "latin": 0.1445,
+        "rap": 0.022,
+        "pop": 0.0
+      }
+    }
+  }
+}

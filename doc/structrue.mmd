@@ -1,0 +1,98 @@
+flowchart LR
+    subgraph A["1. 输入层"]
+        A1["场景标签<br/>CLI: --scene<br/>API: by_scene"]
+        A2["图片输入<br/>CLI: --image<br/>API: by_image"]
+        A3["属性分数<br/>API: by_scene_attributes"]
+    end
+
+    subgraph B["2. 场景理解层"]
+        B1["scene_classifier.py"]
+        B2["MockSceneClassifier"]
+        B3["CLIPSceneClassifier"]
+    end
+
+    subgraph C["3. 场景与属性映射层"]
+        C1["旧版链路<br/>scene_mapper.py<br/>scene_profiles.json"]
+        C2["新版属性链路<br/>attribute_mapper.py<br/>scene_attributes.json"]
+        C3["生成推荐参数<br/>music_targets | genre_priors | tolerances<br/>ranking_weights | feature_importance"]
+    end
+
+    subgraph D["4. 推荐编排层"]
+        D1["recommender.py"]
+        D2["recommend()"]
+        D3["recommend_by_attributes()"]
+        D4["recommend_by_attribute_scores()"]
+        D5["recommend_by_image()"]
+    end
+
+    subgraph E["5. 共享推荐引擎"]
+        E1["recall.py"]
+        E2["旧版召回<br/>硬过滤 + 候选池采样"]
+        E3["新版召回<br/>软打分 Top-K"]
+        E4["ranker.py"]
+        E5["排序信号<br/>feature similarity | genre match | popularity | diversity"]
+        E6["输出<br/>Top-N results + recommendation_reason"]
+    end
+
+    subgraph F["6. 音乐数据层"]
+        F1["data_loader.py"]
+        F2["preprocess.py"]
+        F3["spotify_songs.csv"]
+        F4["songs_processed.csv"]
+        F5["歌曲特征<br/>genre | subgenre | danceability | energy | acousticness<br/>instrumentalness | valence | tempo | popularity"]
+    end
+
+    subgraph G["7. 服务与展示层"]
+        G1["CLI<br/>src/main.py"]
+        G2["Flask API<br/>src/api.py"]
+        G3["index.html"]
+    end
+
+    subgraph H["8. 评测与分析"]
+        H1["batch_clip_stability_test.py"]
+        H2["scene_overlap_evaluation.py"]
+        H3["reports json 与 csv"]
+    end
+
+    A2 --> B1
+    B1 --> B2
+    B1 --> B3
+    B1 --> C
+
+    A1 --> C1
+    A3 --> C2
+    C1 --> C3
+    C2 --> C3
+
+    A1 --> D1
+    A2 --> D5
+    A3 --> D4
+    C3 --> D1
+    D1 --> D2
+    D1 --> D3
+    D1 --> D4
+    D1 --> D5
+
+    D1 --> E1
+    E1 --> E2
+    E1 --> E3
+    E2 --> E4
+    E3 --> E4
+    E4 --> E5
+    E5 --> E6
+
+    F1 --> F2
+    F2 --> F4
+    F3 --> F1
+    F4 --> F5
+    F5 --> E1
+    F5 --> E4
+
+    E6 --> G1
+    E6 --> G2
+    G2 --> G3
+
+    B1 --> H1
+    E6 --> H2
+    H1 --> H3
+    H2 --> H3

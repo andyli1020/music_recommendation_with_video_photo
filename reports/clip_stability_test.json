@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "classifier": "clip",
+    "image_root": "C:/0_code/01_music_recommendation/data/test_images_real",
+    "total_images": 12,
+    "successful_runs": 12,
+    "successful_accuracy": 1.0,
+    "overall_accuracy": 1.0,
+    "status_counts": {
+      "ok": 12
+    }
+  },
+  "results": [
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_Interior_-_geograph.org.uk_-_4801988.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.544,
+      "recognized_scene": "cafe",
+      "confidence": 0.2264,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_interior_-_geograph.org.uk_-_4801991.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.491,
+      "recognized_scene": "cafe",
+      "confidence": 0.2242,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_Muji_Shinjuku_Store_Interior_2013.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.531,
+      "recognized_scene": "cafe",
+      "confidence": 0.2234,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Adams_Gym_Interior_Lockhart_Texas_2018.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.518,
+      "recognized_scene": "gym",
+      "confidence": 0.2308,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Interior_of_The_Gym_Group_showing_gym_equipment_and_signage,_Strood_Retail_Park,_Kent,_20_September_.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.49,
+      "recognized_scene": "gym",
+      "confidence": 0.2335,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Westminster_College_gym_interior_face_NE.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.505,
+      "recognized_scene": "gym",
+      "confidence": 0.2453,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/mountain/Catoctin_Mountain_and_farm_MD1.jpg",
+      "expected_scene": "mountain",
+      "status": "ok",
+      "elapsed_seconds": 0.502,
+      "recognized_scene": "mountain",
+      "confidence": 0.2118,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Dotonbori,_Osaka,_at_night,_November_2016.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.545,
+      "recognized_scene": "night_street",
+      "confidence": 0.2451,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Széchenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.474,
+      "recognized_scene": "night_street",
+      "confidence": 0.2213,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Tokyo_Tower,_Minato_City.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.528,
+      "recognized_scene": "night_street",
+      "confidence": 0.2197,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/study_room/LOC_Main_Reading_Room_Highsmith.jpg",
+      "expected_scene": "study_room",
+      "status": "ok",
+      "elapsed_seconds": 0.507,
+      "recognized_scene": "study_room",
+      "confidence": 0.2308,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/study_room/NYC_Public_Library_Research_Room_Jan_2006-1-_3.jpg",
+      "expected_scene": "study_room",
+      "status": "ok",
+      "elapsed_seconds": 0.498,
+      "recognized_scene": "study_room",
+      "confidence": 0.2419,
+      "model": "CLIP(ViT-B-32, local=open_clip_pytorch_model.bin, multi-prompt)",
+      "match": true,
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "classifier": "mock",
+    "image_root": "C:/0_code/01_music_recommendation/data/test_images_real",
+    "total_images": 12,
+    "successful_runs": 12,
+    "successful_accuracy": 0.3333,
+    "overall_accuracy": 0.3333,
+    "status_counts": {
+      "ok": 12
+    }
+  },
+  "results": [
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_Interior_-_geograph.org.uk_-_4801988.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.025,
+      "recognized_scene": "gym",
+      "confidence": 0.6148,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_interior_-_geograph.org.uk_-_4801991.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.024,
+      "recognized_scene": "gym",
+      "confidence": 0.6168,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/cafe/Cafe_Muji_Shinjuku_Store_Interior_2013.jpg",
+      "expected_scene": "cafe",
+      "status": "ok",
+      "elapsed_seconds": 0.061,
+      "recognized_scene": "cafe",
+      "confidence": 0.634,
+      "model": "mock(基于图像颜色统计)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Adams_Gym_Interior_Lockhart_Texas_2018.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.018,
+      "recognized_scene": "gym",
+      "confidence": 0.623,
+      "model": "mock(基于图像颜色统计)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Interior_of_The_Gym_Group_showing_gym_equipment_and_signage,_Strood_Retail_Park,_Kent,_20_September_.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.025,
+      "recognized_scene": "gym",
+      "confidence": 0.6147,
+      "model": "mock(基于图像颜色统计)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/gym/Westminster_College_gym_interior_face_NE.jpg",
+      "expected_scene": "gym",
+      "status": "ok",
+      "elapsed_seconds": 0.024,
+      "recognized_scene": "gym",
+      "confidence": 0.6175,
+      "model": "mock(基于图像颜色统计)",
+      "match": true,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/mountain/Catoctin_Mountain_and_farm_MD1.jpg",
+      "expected_scene": "mountain",
+      "status": "ok",
+      "elapsed_seconds": 0.016,
+      "recognized_scene": "gym",
+      "confidence": 0.631,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Dotonbori,_Osaka,_at_night,_November_2016.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.039,
+      "recognized_scene": "mountain",
+      "confidence": 0.5103,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Széchenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.017,
+      "recognized_scene": "cafe",
+      "confidence": 0.6576,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/night_street/Tokyo_Tower,_Minato_City.jpg",
+      "expected_scene": "night_street",
+      "status": "ok",
+      "elapsed_seconds": 0.019,
+      "recognized_scene": "mountain",
+      "confidence": 0.5435,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/study_room/LOC_Main_Reading_Room_Highsmith.jpg",
+      "expected_scene": "study_room",
+      "status": "ok",
+      "elapsed_seconds": 0.06,
+      "recognized_scene": "cafe",
+      "confidence": 0.6705,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    },
+    {
+      "image_path": "C:/0_code/01_music_recommendation/data/test_images_real/study_room/NYC_Public_Library_Research_Room_Jan_2006-1-_3.jpg",
+      "expected_scene": "study_room",
+      "status": "ok",
+      "elapsed_seconds": 0.015,
+      "recognized_scene": "cafe",
+      "confidence": 0.5361,
+      "model": "mock(基于图像颜色统计)",
+      "match": false,
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "cafe": {
+    "description": "咖啡厅 / 安静放松、聊天或轻度工作",
+    "preferred_genres": ["pop", "r&b"],
+    "preferred_subgenres": ["neo soul", "urban contemporary", "indie poptimism"],
+    "target_features": {
+      "danceability": 0.55,
+      "energy": 0.40,
+      "acousticness": 0.60,
+      "instrumentalness": 0.10,
+      "valence": 0.50,
+      "tempo": 105
+    },
+    "tolerances": {
+      "energy": 0.20,
+      "valence": 0.25,
+      "tempo": 20,
+      "acousticness": 0.30
+    },
+    "ranking_weights": {
+      "genre_match": 0.30,
+      "feature_similarity": 0.50,
+      "popularity": 0.20
+    }
+  },
+  "gym": {
+    "description": "健身房 / 高能量、快节奏、激励型运动音乐",
+    "preferred_genres": ["edm", "rap", "rock"],
+    "preferred_subgenres": ["big room", "electro house", "hard rock", "trap"],
+    "target_features": {
+      "danceability": 0.70,
+      "energy": 0.85,
+      "acousticness": 0.05,
+      "instrumentalness": 0.15,
+      "valence": 0.55,
+      "tempo": 128
+    },
+    "tolerances": {
+      "energy": 0.15,
+      "valence": 0.25,
+      "tempo": 15,
+      "acousticness": 0.15
+    },
+    "ranking_weights": {
+      "genre_match": 0.35,
+      "feature_similarity": 0.45,
+      "popularity": 0.20
+    }
+  },
+  "study_room": {
+    "description": "书房/学习 / 低能量、高原声、适合专注",
+    "preferred_genres": ["r&b", "pop", "rock"],
+    "preferred_subgenres": ["neo soul", "urban contemporary", "indie poptimism", "classic rock"],
+    "target_features": {
+      "danceability": 0.50,
+      "energy": 0.30,
+      "acousticness": 0.55,
+      "instrumentalness": 0.20,
+      "valence": 0.40,
+      "tempo": 105
+    },
+    "tolerances": {
+      "energy": 0.20,
+      "valence": 0.25,
+      "tempo": 25,
+      "acousticness": 0.30
+    },
+    "ranking_weights": {
+      "genre_match": 0.25,
+      "feature_similarity": 0.50,
+      "popularity": 0.25
+    }
+  },
+  "night_street": {
+    "description": "夜晚街道 / 沉浸氛围、中等能量、略带冷感",
+    "preferred_genres": ["rap", "r&b", "pop"],
+    "preferred_subgenres": ["hip hop", "electropop", "neo soul", "dance pop"],
+    "target_features": {
+      "danceability": 0.65,
+      "energy": 0.55,
+      "acousticness": 0.30,
+      "instrumentalness": 0.05,
+      "valence": 0.40,
+      "tempo": 115
+    },
+    "tolerances": {
+      "energy": 0.20,
+      "valence": 0.25,
+      "tempo": 20,
+      "acousticness": 0.25
+    },
+    "ranking_weights": {
+      "genre_match": 0.30,
+      "feature_similarity": 0.50,
+      "popularity": 0.20
+    }
+  },
+  "mountain": {
+    "description": "登山/户外 / 开阔感、正向情绪、有力量的节奏",
+    "preferred_genres": ["rock", "edm", "pop"],
+    "preferred_subgenres": ["classic rock", "album rock", "hard rock", "progressive electro house"],
+    "target_features": {
+      "danceability": 0.55,
+      "energy": 0.75,
+      "acousticness": 0.20,
+      "instrumentalness": 0.05,
+      "valence": 0.60,
+      "tempo": 125
+    },
+    "tolerances": {
+      "energy": 0.20,
+      "valence": 0.25,
+      "tempo": 20,
+      "acousticness": 0.25
+    },
+    "ranking_weights": {
+      "genre_match": 0.30,
+      "feature_similarity": 0.45,
+      "popularity": 0.25
+    }
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "schema_version": "draft-v1",
+  "description": "场景属性层配置草案。用于定义可扩展的属性空间、现有原型场景的属性向量，以及后续 CLIP 属性打分可参考的提示词。",
+  "score_range": [0.0, 1.0],
+  "attribute_order": [
+    "arousal",
+    "socialness",
+    "focus",
+    "relaxation",
+    "nature",
+    "urban",
+    "night",
+    "openness",
+    "warmth"
+  ],
+  "attributes": {
+    "arousal": {
+      "description": "场景唤醒度/动感强度。越高表示越活跃、越具运动感。",
+      "music_effect_hint": "提升 energy、tempo、danceability",
+      "positive_prompts": [
+        "an energetic, dynamic, active environment",
+        "a lively scene with movement, action, and intensity",
+        "a high-energy place for exercise, dancing, or excitement"
+      ],
+      "negative_prompts": [
+        "a calm, still, low-energy environment",
+        "a quiet place with little movement or activity",
+        "a peaceful scene for resting or slowing down"
+      ]
+    },
+    "socialness": {
+      "description": "社交密度/互动感。越高表示越适合交流、聚会或共同活动。",
+      "music_effect_hint": "提升流行感、律动感，弱化器乐独奏倾向",
+      "positive_prompts": [
+        "a social place where people gather, talk, or interact",
+        "a lively shared environment with group activity",
+        "a public place designed for meeting, chatting, or hanging out"
+      ],
+      "negative_prompts": [
+        "a solitary place with little social interaction",
+        "a quiet personal environment for being alone",
+        "an isolated scene with no sense of gathering or community"
+      ]
+    },
+    "focus": {
+      "description": "专注导向。越高表示越适合阅读、学习、深度工作。",
+      "music_effect_hint": "降低 energy，提升 instrumentalness",
+      "positive_prompts": [
+        "a quiet place for reading, studying, or concentrated work",
+        "an environment designed for focus, silence, and attention",
+        "a calm workspace for learning or deep thinking"
+      ],
+      "negative_prompts": [
+        "a noisy and distracting place for social activity",
+        "a chaotic environment where concentration is difficult",
+        "a loud place full of interruptions and stimulation"
+      ]
+    },
+    "relaxation": {
+      "description": "放松感/舒缓感。越高表示越柔和、越适合休息与慢节奏陪伴。",
+      "music_effect_hint": "降低节奏感，提升 acousticness",
+      "positive_prompts": [
+        "a relaxing, peaceful, comfortable environment",
+        "a slow and soothing place for unwinding",
+        "a calm atmosphere that feels soft and restful"
+      ],
+      "negative_prompts": [
+        "a tense, intense, or stressful environment",
+        "a rushed place with pressure and fast activity",
+        "an overstimulating scene that does not feel restful"
+      ]
+    },
+    "nature": {
+      "description": "自然感。越高表示越偏自然景观、植被、天空、山水等元素。",
+      "music_effect_hint": "提升 acoustic、folk、ambient 倾向",
+      "positive_prompts": [
+        "a natural outdoor environment with mountains, trees, sky, and landscape",
+        "a scenic place dominated by nature rather than buildings",
+        "an open-air environment with strong natural elements"
+      ],
+      "negative_prompts": [
+        "an indoor or highly artificial man-made environment",
+        "a dense urban space with little natural scenery",
+        "a constructed environment dominated by buildings and infrastructure"
+      ]
+    },
+    "urban": {
+      "description": "都市感/人造环境感。越高表示越偏城市、商业、建筑和夜生活氛围。",
+      "music_effect_hint": "提升 pop、r&b、edm、rap 倾向",
+      "positive_prompts": [
+        "a modern urban environment with buildings, streets, and city activity",
+        "a man-made city scene with strong metropolitan atmosphere",
+        "a commercial or public space shaped by architecture and infrastructure"
+      ],
+      "negative_prompts": [
+        "a rural or natural environment away from the city",
+        "a landscape with little urban structure or artificial design",
+        "a wild outdoor place with minimal signs of city life"
+      ]
+    },
+    "night": {
+      "description": "夜晚感/暗色氛围。越高表示越偏夜间、暗光和人工灯源环境。",
+      "music_effect_hint": "提升 r&b、chill、synthwave 倾向，valence 可略降",
+      "positive_prompts": [
+        "a dark nighttime scene with artificial lights",
+        "an evening or night environment with shadows and city glow",
+        "a low-light scene after sunset"
+      ],
+      "negative_prompts": [
+        "a bright daytime scene under natural light",
+        "a sunlit environment in broad daylight",
+        "a daytime place with clear bright illumination"
+      ]
+    },
+    "openness": {
+      "description": "空间开阔度。越高表示视野更开阔、空间更外向。",
+      "music_effect_hint": "适配更铺展、开阔的听感和编排",
+      "positive_prompts": [
+        "a wide open space with long sight lines and spacious feeling",
+        "an expansive environment with visible distance and openness",
+        "a broad scene that feels airy and unconstrained"
+      ],
+      "negative_prompts": [
+        "a cramped, enclosed, or narrow environment",
+        "a small indoor space with limited visual openness",
+        "a confined scene with little sense of expansion"
+      ]
+    },
+    "warmth": {
+      "description": "温暖亲和感。越高表示越舒适、柔和、有人情味。",
+      "music_effect_hint": "提升 valence，偏柔和舒适风格",
+      "positive_prompts": [
+        "a warm, cozy, inviting atmosphere",
+        "a comfortable place with soft lighting and emotional warmth",
+        "an intimate environment that feels welcoming and gentle"
+      ],
+      "negative_prompts": [
+        "a cold, distant, or impersonal atmosphere",
+        "a harsh environment that feels emotionally detached",
+        "a sterile or unfriendly place without warmth"
+      ]
+    }
+  },
+  "scene_prototypes": {
+    "cafe": {
+      "description": "咖啡厅 / 安静放松、轻社交、轻度工作",
+      "prototype_tags": ["indoor", "urban", "cozy", "semi-social", "soft-light"],
+      "attribute_scores": {
+        "arousal": 0.35,
+        "socialness": 0.55,
+        "focus": 0.45,
+        "relaxation": 0.72,
+        "nature": 0.05,
+        "urban": 0.75,
+        "night": 0.20,
+        "openness": 0.30,
+        "warmth": 0.78
+      }
+    },
+    "study_room": {
+      "description": "书房/学习空间 / 低能量、高专注、安静稳定",
+      "prototype_tags": ["indoor", "quiet", "solo", "focus", "structured"],
+      "attribute_scores": {
+        "arousal": 0.12,
+        "socialness": 0.08,
+        "focus": 0.95,
+        "relaxation": 0.80,
+        "nature": 0.05,
+        "urban": 0.40,
+        "night": 0.15,
+        "openness": 0.20,
+        "warmth": 0.55
+      }
+    },
+    "gym": {
+      "description": "健身房 / 高能量、快节奏、激励型运动环境",
+      "prototype_tags": ["indoor", "active", "fitness", "high-energy", "rhythmic"],
+      "attribute_scores": {
+        "arousal": 0.95,
+        "socialness": 0.70,
+        "focus": 0.25,
+        "relaxation": 0.10,
+        "nature": 0.00,
+        "urban": 0.65,
+        "night": 0.10,
+        "openness": 0.45,
+        "warmth": 0.45
+      }
+    },
+    "night_street": {
+      "description": "夜晚街道 / 都市夜色、中等能量、冷感沉浸",
+      "prototype_tags": ["outdoor", "urban", "night", "neon", "moody"],
+      "attribute_scores": {
+        "arousal": 0.58,
+        "socialness": 0.42,
+        "focus": 0.18,
+        "relaxation": 0.22,
+        "nature": 0.00,
+        "urban": 0.95,
+        "night": 0.96,
+        "openness": 0.62,
+        "warmth": 0.28
+      }
+    },
+    "mountain": {
+      "description": "山地/户外自然场景 / 开阔、自然、略带力量感",
+      "prototype_tags": ["outdoor", "nature", "open", "landscape", "fresh-air"],
+      "attribute_scores": {
+        "arousal": 0.45,
+        "socialness": 0.05,
+        "focus": 0.35,
+        "relaxation": 0.68,
+        "nature": 0.98,
+        "urban": 0.00,
+        "night": 0.08,
+        "openness": 0.95,
+        "warmth": 0.60
+      }
+    }
+  },
+  "music_target_weight_rules": {
+    "energy": {
+      "bias": 0.2,
+      "weights": {
+        "arousal": 0.45,
+        "socialness": 0.15,
+        "focus": -0.15,
+        "urban": 0.05
+      }
+    },
+    "valence": {
+      "bias": 0.0,
+      "weights": {
+        "relaxation": 0.3,
+        "warmth": 0.2,
+        "nature": 0.15,
+        "socialness": 0.1,
+        "night": -0.1,
+        "arousal": 0.1
+      }
+    },
+    "acousticness": {
+      "bias": 0.15,
+      "weights": {
+        "relaxation": 0.35,
+        "focus": 0.25,
+        "nature": 0.15,
+        "urban": -0.15,
+        "arousal": -0.1
+      }
+    },
+    "instrumentalness": {
+      "bias": 0.0,
+      "weights": {
+        "focus": 0.35,
+        "relaxation": 0.2,
+        "nature": 0.15,
+        "socialness": -0.2,
+        "arousal": -0.15
+      }
+    },
+    "danceability": {
+      "bias": 0.0,
+      "weights": {
+        "arousal": 0.4,
+        "socialness": 0.25,
+        "urban": 0.15,
+        "focus": -0.15
+      }
+    }
+  },
+  "current_dataset_genre_prior_rules": {
+    "pop": {
+      "bias": 0.0,
+      "weights": {
+        "socialness": 0.35,
+        "urban": 0.2,
+        "warmth": 0.15,
+        "arousal": 0.1,
+        "focus": -0.2,
+        "nature": -0.1
+      }
+    },
+    "rap": {
+      "bias": 0.0,
+      "weights": {
+        "urban": 0.35,
+        "arousal": 0.25,
+        "socialness": 0.2,
+        "night": 0.15,
+        "warmth": -0.1,
+        "focus": -0.15
+      }
+    },
+    "edm": {
+      "bias": 0.0,
+      "weights": {
+        "arousal": 0.45,
+        "socialness": 0.2,
+        "urban": 0.2,
+        "openness": 0.1,
+        "focus": -0.15
+      }
+    },
+    "r&b": {
+      "bias": 0.0,
+      "weights": {
+        "night": 0.3,
+        "urban": 0.25,
+        "relaxation": 0.2,
+        "warmth": 0.15,
+        "socialness": 0.1
+      }
+    },
+    "rock": {
+      "bias": 0.0,
+      "weights": {
+        "arousal": 0.3,
+        "openness": 0.25,
+        "nature": 0.2,
+        "relaxation": -0.1
+      }
+    },
+    "latin": {
+      "bias": 0.0,
+      "weights": {
+        "socialness": 0.25,
+        "warmth": 0.2,
+        "arousal": 0.15,
+        "urban": 0.1,
+        "openness": 0.1,
+        "focus": -0.15,
+        "nature": -0.1
+      }
+    }
+  },
+  "prototype_match": {
+    "distance_metric": "cosine",
+    "top_k": 2,
+    "description": "图像先映射到属性向量，再与原型场景属性向量做最近邻匹配，用于解释和展示，不作为唯一决策入口。"
+  },
+  "inference_guidelines": {
+    "attribute_score_method": "sigmoid(alpha * (max_sim(pos_prompts) - max_sim(neg_prompts)))",
+    "default_alpha": 8.0,
+    "use_scene_label_as_final_decision": false,
+    "notes": [
+      "优先将属性向量作为推荐系统的核心输入。",
+      "原型场景主要用于初始化、可视化解释和最近邻展示。",
+      "新增场景时优先复用现有属性空间，不优先扩充固定类别词表。"
+    ]
+  }
+}

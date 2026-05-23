@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视界伴音 - 推荐过程可视化</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI','Microsoft YaHei',sans-serif; background:#0f1117; color:#e0e0e0; min-height:100vh; }
+.header { background:linear-gradient(135deg,#1a1d2e 0%,#252840 100%); padding:18px 32px; border-bottom:1px solid #2a2d3e; display:flex; align-items:center; gap:16px; }
+.header h1 { font-size:22px; font-weight:700; background:linear-gradient(135deg,#64b5f6,#ce93d8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header .badge { background:#2a2d3e; padding:4px 12px; border-radius:12px; font-size:12px; color:#888; }
+.container { display:grid; grid-template-columns:280px 1fr; min-height:calc(100vh - 65px); }
+.sidebar { background:#151821; border-right:1px solid #2a2d3e; padding:20px; overflow-y:auto; }
+.sidebar h3 { font-size:13px; color:#888; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
+.scene-btn { display:block; width:100%; padding:12px 16px; margin-bottom:6px; background:#1e2130; border:1px solid #2a2d3e; border-radius:8px; color:#ccc; font-size:14px; cursor:pointer; text-align:left; transition:all 0.15s; }
+.scene-btn:hover { border-color:#64b5f6; background:#252840; }
+.scene-btn.active { border-color:#64b5f6; background:rgba(100,181,246,0.12); color:#64b5f6; }
+.scene-btn .icon { margin-right:8px; }
+.upload-area { margin-top:20px; padding:24px 16px; border:2px dashed #2a2d3e; border-radius:10px; text-align:center; cursor:pointer; transition:all 0.2s; }
+.upload-area:hover { border-color:#ce93d8; background:rgba(206,147,216,0.05); }
+.upload-area input { display:none; }
+.upload-area .upload-icon { font-size:32px; margin-bottom:8px; }
+.upload-area .upload-text { font-size:13px; color:#888; }
+.upload-area .upload-name { font-size:12px; color:#64b5f6; margin-top:6px; }
+.main { padding:24px; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto auto auto; gap:20px; align-content:start; }
+.card { background:#151821; border:1px solid #2a2d3e; border-radius:10px; padding:18px; }
+.card h3 { font-size:14px; color:#aaa; margin-bottom:14px; font-weight:600; }
+.card.full { grid-column:1/-1; }
+.loading-text { text-align:center; color:#666; padding:40px; font-size:14px; }
+.scene-header { grid-column:1/-1; display:flex; align-items:center; gap:12px; padding:0 0 8px; }
+.scene-header .scene-name { font-size:20px; font-weight:700; color:#e0e0e0; }
+.scene-header .scene-desc { color:#888; font-size:14px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { text-align:left; padding:8px 12px; background:#1e2130; color:#888; font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+td { padding:8px 12px; border-bottom:1px solid #1e2130; }
+tr:hover td { background:rgba(100,181,246,0.04); }
+.rank-num { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; }
+.r1 { background:#ffd700; color:#1a1d2e; } .r2 { background:#c0c0c0; color:#1a1d2e; } .r3 { background:#cd7f32; color:#1a1d2e; } .rn { background:#2a2d3e; color:#888; }
+.score-bar { height:4px; background:#2a2d3e; border-radius:2px; margin-top:2px; }
+.score-bar-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#64b5f6,#ce93d8); }
+.proto-card { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:#1e2130; border-radius:20px; margin:4px; font-size:13px; }
+.proto-card .sim { color:#64b5f6; font-weight:600; }
+.tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:8px; }
+.tag { padding:2px 8px; background:#252840; border-radius:10px; font-size:11px; color:#888; }
+.attr-bar { margin:3px 0; display:flex; align-items:center; gap:8px; }
+.attr-bar .attr-label { width:65px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
+.attr-bar .attr-track { flex:1; height:10px; background:#1e2130; border-radius:5px; overflow:hidden; }
+.attr-bar .attr-fill { height:100%; border-radius:5px; transition:width 0.4s; }
+.attr-bar .attr-val { width:36px; font-size:11px; color:#888; text-align:right; }
+.bar-v { margin:4px 0; display:flex; align-items:center; gap:8px; }
+.bar-v .bar-label { width:100px; font-size:12px; color:#aaa; flex-shrink:0; }
+.bar-v .bar-track { flex:1; height:14px; background:#1e2130; border-radius:7px; overflow:hidden; }
+.bar-v .bar-fill { height:100%; border-radius:7px; }
+.bar-v .bar-val { width:40px; font-size:12px; color:#64b5f6; font-weight:600; text-align:right; }
+.block-scene { border:1px solid #2a2d3e; border-radius:10px; padding:16px; background:#151821; }
+.block-scene h4 { font-size:14px; margin-bottom:10px; }
+.comparison-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.comparison-grid .wide { grid-column:span 2; }
+@media (max-width:900px) { .container { grid-template-columns:1fr; } .main { grid-template-columns:1fr; } .comparison-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>视界伴音</h1>
+  <span style="color:#64b5f6;font-size:14px;">视觉场景感知的音乐推荐系统</span>
+  <span class="badge">属性层可视化</span>
+  <span style="margin-left:auto;font-size:12px;color:#666;">CLIP + Attribute Mapper · 零外部依赖</span>
+</div>
+
+<div class="container">
+<div class="sidebar">
+  <h3>场景选择</h3>
+  <button class="scene-btn active" data-scene="cafe"><span class="icon">☕</span> 咖啡厅</button>
+  <button class="scene-btn" data-scene="study_room"><span class="icon">📚</span> 书房</button>
+  <button class="scene-btn" data-scene="gym"><span class="icon">💪</span> 健身房</button>
+  <button class="scene-btn" data-scene="night_street"><span class="icon">🌃</span> 夜晚街道</button>
+  <button class="scene-btn" data-scene="mountain"><span class="icon">🏔️</span> 山野户外</button>
+  <button class="scene-btn" data-scene="" style="color:#ce93d8;border-color:rgba(206,147,216,0.3);"><span class="icon">🔄</span> 全场景对比</button>
+  <div class="upload-area" id="uploadArea">
+    <div class="upload-icon">📷</div>
+    <div class="upload-text">上传图片进行推荐</div>
+    <div class="upload-name" id="uploadName"></div>
+    <input type="file" id="fileInput" accept="image/*">
+  </div>
+</div>
+
+<div class="main" id="mainContent">
+  <div class="card full scene-header">
+    <div class="scene-name" id="sceneName">选择场景开始</div>
+    <div class="scene-desc" id="sceneDesc"></div>
+  </div>
+  <div class="card full loading-text" id="placeholder">
+    <div style="font-size:48px;margin-bottom:16px;">🎵</div>
+    <div>点击左侧场景按钮或上传图片<br>查看推荐全过程可视化</div>
+  </div>
+  <div class="card" id="attrCard" style="display:none;"><h3>场景属性向量 (9 维)</h3><div id="attrBars"></div></div>
+  <div class="card" id="matchCard" style="display:none;"><h3>最近原型场景匹配</h3><div id="prototypeMatches"></div><div id="prototypeTags"></div></div>
+  <div class="card" id="musicCard" style="display:none;"><h3>音乐目标特征</h3><div id="musicBars"></div></div>
+  <div class="card" id="genreCard" style="display:none;"><h3>流派先验分布</h3><div id="genreBars"></div></div>
+  <div class="card full" id="tableCard" style="display:none;"><h3>推荐结果 Top-10</h3><table id="recTable"><thead><tr><th>#</th><th>歌曲</th><th>歌手</th><th>流派</th><th>得分</th><th>相似度</th><th>能量</th><th>原声</th></tr></thead><tbody id="recBody"></tbody></table></div>
+</div>
+</div>
+
+<script>
+const SCENE_NAMES={cafe:'咖啡厅',study_room:'书房',gym:'健身房',night_street:'夜晚街道',mountain:'山野户外'};
+const SCENE_ICONS={cafe:'☕',study_room:'📚',gym:'💪',night_street:'🌃',mountain:'🏔️'};
+const ATTR_LABELS={arousal:'唤醒度',socialness:'社交感',focus:'专注度',relaxation:'放松感',nature:'自然感',urban:'都市感',night:'夜晚感',openness:'开阔度',warmth:'温暖感'};
+const ATTR_ORDER=['arousal','socialness','focus','relaxation','nature','urban','night','openness','warmth'];
+const ATTR_COLORS=['#ff6b6b','#ffd93d','#6bcb77','#4d96ff','#2ecc71','#ff922b','#845ef7','#20c997','#f06595'];
+const MUSIC_COLORS={energy:'#ff6b6b',acousticness:'#6bcb77',valence:'#ffd93d',danceability:'#ff922b',instrumentalness:'#4d96ff'};
+const GENRE_COLORS={pop:'#64b5f6',rap:'#ff922b',edm:'#6bcb77','r&b':'#ce93d8',rock:'#ff6b6b',latin:'#ffd93d'};
+
+function showLoading(){
+  ['attrBars','musicBars','genreBars','prototypeMatches','prototypeTags'].forEach(id=>{document.getElementById(id).innerHTML='<div class="loading-text">加载中...</div>';});
+  document.getElementById('recBody').innerHTML='<tr><td colspan="8" style="text-align:center;color:#666;padding:24px;">加载中...</td></tr>';
+}
+
+function showAllCards(){['attrCard','matchCard','musicCard','genreCard','tableCard'].forEach(id=>{document.getElementById(id).style.display='';});}
+function hideAllCards(){['attrCard','matchCard','musicCard','genreCard','tableCard'].forEach(id=>{document.getElementById(id).style.display='none';});}
+
+async function loadScene(scene){
+  document.querySelectorAll('.scene-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.querySelector('[data-scene="'+scene+'"]');if(btn)btn.classList.add('active');
+  document.getElementById('uploadName').textContent='';document.getElementById('fileInput').value='';
+  document.getElementById('placeholder').style.display='none';showAllCards();showLoading();
+  try{
+    const r=await fetch('/recommend/by_scene_attributes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scene,top_k:10})});
+    const d=await r.json();if(d.error){alert(d.error);return;}
+    renderAll(d);
+  }catch(e){alert('请求失败: '+e.message);}
+}
+
+function renderAll(d){
+  document.getElementById('sceneName').textContent=(SCENE_ICONS[d.source_scene]||'')+' '+(SCENE_NAMES[d.source_scene]||d.source_scene);
+  document.getElementById('sceneDesc').textContent=(d.prototype_matches||[])[0]?.description||'';
+  renderAttrBars(d.attribute_scores);
+  renderMusicBars(d.music_targets);
+  renderGenreBars(d.genre_priors);
+  renderMatches(d.prototype_matches,d.attribute_summary);
+  renderTable(d.recommendations||[]);
+}
+
+function renderAttrBars(scores){
+  const div=document.getElementById('attrBars');
+  div.innerHTML=ATTR_ORDER.map((a,i)=>{
+    const v=scores[a]||0; const pct=(v*100).toFixed(0);
+    return '<div class="attr-bar"><span class="attr-label">'+ATTR_LABELS[a]+'</span><div class="attr-track"><div class="attr-fill" style="width:'+pct+'%;background:'+ATTR_COLORS[i]+';"></div></div><span class="attr-val">'+v.toFixed(2)+'</span></div>';
+  }).join('');
+}
+
+function renderMusicBars(targets){
+  const div=document.getElementById('musicBars');
+  const keys=['energy','acousticness','valence','danceability','instrumentalness'];
+  const labels=['能量','原声感','情绪正向','舞动感','器乐感'];
+  div.innerHTML=keys.map((k,i)=>{
+    const v=targets[k]||0; const pct=(v*100).toFixed(0);
+    return '<div class="bar-v"><span class="bar-label">'+labels[i]+'</span><div class="bar-track"><div class="bar-fill" style="width:'+pct+'%;background:'+MUSIC_COLORS[k]+';"></div></div><span class="bar-val">'+v.toFixed(3)+'</span></div>';
+  }).join('');
+}
+
+function renderGenreBars(priors){
+  const div=document.getElementById('genreBars');
+  const entries=Object.entries(priors||{}).sort((a,b)=>b[1]-a[1]);
+  const maxV=entries.length?entries[0][1]:1;
+  div.innerHTML=entries.map(([g,v])=>{
+    const pct=((v/maxV)*100).toFixed(0);
+    return '<div class="bar-v"><span class="bar-label">'+g+'</span><div class="bar-track"><div class="bar-fill" style="width:'+pct+'%;background:'+(GENRE_COLORS[g]||'#888')+';"></div></div><span class="bar-val">'+v.toFixed(3)+'</span></div>';
+  }).join('');
+}
+
+function renderMatches(matches,summary){
+  document.getElementById('prototypeMatches').innerHTML=(matches||[]).map(m=>
+    '<div class="proto-card">'+(SCENE_ICONS[m.scene]||'')+' '+(SCENE_NAMES[m.scene]||m.scene)+' <span class="sim">'+m.similarity.toFixed(3)+'</span></div>'
+  ).join('');
+  document.getElementById('prototypeTags').innerHTML='<div class="tags">'+(summary||[]).map(a=>
+    '<span class="tag">'+(ATTR_LABELS[a.attribute]||a.attribute)+':'+a.score.toFixed(2)+'</span>'
+  ).join('')+'</div>';
+}
+
+function renderTable(results){
+  const tbody=document.getElementById('recBody');
+  tbody.innerHTML=(results||[]).map((s,i)=>{
+    const rc=i<3?'r'+(i+1):'rn';
+    return '<tr><td><div class="rank-num '+rc+'">'+(s.rank||i+1)+'</div></td>'+
+      '<td style="font-weight:600;">'+s.title+'</td><td style="color:#aaa;">'+s.artist+'</td>'+
+      '<td><span class="tag">'+(s.genre||'')+'</span></td>'+
+      '<td style="color:#64b5f6;font-weight:600;">'+(s.final_score||0).toFixed(3)+'</td>'+
+      '<td><div>'+(s.feature_sim||0).toFixed(3)+'</div><div class="score-bar"><div class="score-bar-fill" style="width:'+((s.feature_sim||0)*100).toFixed(0)+'%"></div></div></td>'+
+      '<td>'+(s.energy||0).toFixed(2)+'</td><td>'+(s.acousticness||0).toFixed(2)+'</td></tr>';
+  }).join('')||'<tr><td colspan="8" style="text-align:center;color:#666;">无结果</td></tr>';
+}
+
+async function loadAllScenes(){
+  document.querySelectorAll('.scene-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-scene=""]')?.classList.add('active');
+  document.getElementById('sceneName').textContent='全场景对比';
+  document.getElementById('sceneDesc').textContent='5 个场景 · 属性层推荐并行对比';
+  document.getElementById('placeholder').style.display='none';hideAllCards();showLoading();
+  const cards=['cafe','study_room','gym','night_street','mountain'];
+  const main=document.getElementById('mainContent');
+  main.querySelectorAll('.scene-block').forEach(e=>e.remove());
+  main.querySelectorAll('.card:not(.full):not(.scene-header)').forEach(c=>c.style.display='none');
+  const allData={};
+  for(const s of cards){
+    const r=await fetch('/recommend/by_scene_attributes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scene:s,top_k:5})});
+    allData[s]=await r.json();
+  }
+  const grid=document.createElement('div');
+  grid.className='comparison-grid';
+  grid.style.gridColumn='1/-1';
+  for(const s of cards){
+    const d=allData[s];
+    const prefs=Object.entries(d.genre_priors||{}).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const top3=(d.recommendations||[]).slice(0,3);
+    const extraClass=(s==='mountain')?' wide':'';
+    grid.innerHTML+='<div class="block-scene'+extraClass+'">'+
+      '<h4>'+SCENE_ICONS[s]+' '+SCENE_NAMES[s]+'</h4>'+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+
+      '<div>'+
+        '<div style="font-size:11px;color:#888;margin-bottom:4px;">属性摘要</div>'+
+        (d.attribute_summary||[]).map(a=>'<div class="attr-bar"><span class="attr-label">'+(ATTR_LABELS[a.attribute]||a.attribute)+'</span><div class="attr-track"><div class="attr-fill" style="width:'+(a.score*100).toFixed(0)+'%;background:'+(ATTR_COLORS[ATTR_ORDER.indexOf(a.attribute)]||'#888')+';"></div></div><span class="attr-val">'+a.score.toFixed(2)+'</span></div>').join('')+
+      '</div>'+
+      '<div>'+
+        '<div style="font-size:11px;color:#888;margin-bottom:4px;">流派 · 目标特征</div>'+
+        '<div style="font-size:12px;margin-bottom:6px;">'+prefs.map(([g,v])=>'<span style="color:'+(GENRE_COLORS[g]||'#888')+';">'+g+'('+v.toFixed(2)+')</span>').join(' ')+'</div>'+
+        '<div style="font-size:11px;color:#888;">E:'+(d.music_targets?.energy||0).toFixed(2)+' A:'+(d.music_targets?.acousticness||0).toFixed(2)+' V:'+(d.music_targets?.valence||0).toFixed(2)+'</div>'+
+        '<div style="margin-top:8px;font-size:12px;">'+top3.map((s,i)=>'<div style="color:#ccc;margin:1px 0;">'+(i+1)+'. '+s.title+' <span style="color:#64b5f6;font-size:11px;">'+(s.genre||'')+'</span></div>').join('')+'</div>'+
+      '</div></div></div>';
+  }
+  main.appendChild(grid);
+}
+
+document.querySelectorAll('.scene-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const scene=btn.dataset.scene;
+    if(scene)loadScene(scene);else loadAllScenes();
+  });
+});
+
+document.getElementById('uploadArea').addEventListener('click',()=>document.getElementById('fileInput').click());
+document.getElementById('fileInput').addEventListener('change',async function(){
+  const file=this.files[0];if(!file)return;
+  document.getElementById('uploadName').textContent=file.name;
+  document.getElementById('placeholder').style.display='none';showAllCards();showLoading();
+  const fd=new FormData();fd.append('image',file);fd.append('classifier','clip');fd.append('use_attributes','true');fd.append('top_k','10');
+  try{
+    const r=await fetch('/recommend/by_image',{method:'POST',body:fd});
+    const d=await r.json();if(d.error){alert(d.error);return;}
+    document.getElementById('sceneName').textContent='📷 '+d.scene;
+    document.getElementById('sceneDesc').textContent='置信度: '+(d.confidence||0).toFixed(3)+' · 模型: '+(d.model||'');
+    let sceneDescEl = document.getElementById('sceneDesc');
+    if (d.fallback_reason) {
+      sceneDescEl.textContent += ' ⚠️ ' + d.fallback_reason;
+      sceneDescEl.style.color = '#ff922b';
+    } else {
+      sceneDescEl.style.color = '#888';
+    }
+    renderAttrBars(d.attribute_scores||{});
+    renderMusicBars(d.music_targets||{});
+    renderGenreBars(d.genre_priors||{});
+    renderMatches(d.prototype_matches||[],d.attribute_summary||[]);
+    renderTable(d.recommendations||[]);
+  }catch(e){alert('上传失败: '+e.message);}
+});
+
+loadScene('cafe');
+</script>
+</body>
+</html>

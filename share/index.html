@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视界伴音 - 分享版</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --panel-2: #18213f;
+      --line: #2a355f;
+      --text: #eef2ff;
+      --muted: #a6b0d4;
+      --primary: #7cc8ff;
+      --accent: #c89bff;
+      --good: #74e0b3;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(124, 200, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top left, rgba(200, 155, 255, 0.12), transparent 24%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(24, 33, 63, 0.96), rgba(13, 18, 36, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .title {
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .notes {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .note {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .scene-buttons,
+    .sample-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .scene-btn,
+    .sample-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 16px;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .scene-btn {
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .scene-btn:hover,
+    .sample-card:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary);
+    }
+
+    .scene-btn.active,
+    .sample-card.active {
+      background: linear-gradient(135deg, rgba(124, 200, 255, 0.14), rgba(200, 155, 255, 0.1));
+      border-color: var(--primary);
+    }
+
+    .sample-card {
+      width: 180px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .sample-card img {
+      display: block;
+      width: 100%;
+      height: 112px;
+      object-fit: cover;
+      background: #0a0f1f;
+    }
+
+    .sample-card-body {
+      padding: 10px 12px 12px;
+    }
+
+    .sample-card-title {
+      margin: 0 0 4px;
+      font-size: 14px;
+    }
+
+    .sample-card-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin: 0 0 14px;
+    }
+
+    .hero-scene {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .hero-scene-icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      background: rgba(124, 200, 255, 0.12);
+      font-size: 28px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .summary {
+      margin: 14px 0 0;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: 82px 1fr 48px;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .metric-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+
+    .metric-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .right-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .match-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .match-chip {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+    }
+
+    .score {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    tbody tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .rank {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      background: rgba(124, 200, 255, 0.12);
+      color: var(--primary);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .empty {
+      padding: 24px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1 class="title">视界伴音</h1>
+          <p class="subtitle" id="subtitle">静态分享版音乐推荐可视化</p>
+        </div>
+        <div class="hero-badges">
+          <span class="badge" id="generatedAt">生成时间 -</span>
+          <span class="badge" id="songCount">歌曲数 -</span>
+          <span class="badge" id="topK">Top-K -</span>
+        </div>
+      </div>
+      <div class="notes" id="notes"></div>
+      <div class="toolbar">
+        <div>
+          <h2 class="section-title">场景切换</h2>
+          <div class="scene-buttons" id="sceneButtons"></div>
+        </div>
+        <div>
+          <h2 class="section-title">示例图片</h2>
+          <div class="sample-list" id="sampleList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="hero-scene">
+          <div class="hero-scene-icon" id="sceneIcon">-</div>
+          <div>
+            <h2 id="sceneLabel">请选择场景</h2>
+            <div class="muted" id="sceneDescription"></div>
+          </div>
+        </div>
+        <div class="tags" id="sceneTags"></div>
+        <div class="summary" id="sceneReason"></div>
+        <div style="margin-top: 18px;">
+          <h3>场景属性</h3>
+          <div class="metric-list" id="attributeList"></div>
+        </div>
+      </div>
+
+      <div class="right-stack">
+        <div class="cards-grid">
+          <div class="mini-card">
+            <h3>音乐目标特征</h3>
+            <div class="metric-list" id="musicTargets"></div>
+          </div>
+          <div class="mini-card">
+            <h3>流派先验</h3>
+            <div class="metric-list" id="genrePriors"></div>
+          </div>
+          <div class="mini-card">
+            <h3>关键属性摘要</h3>
+            <div class="match-list" id="attributeSummary"></div>
+          </div>
+          <div class="mini-card">
+            <h3>原型场景匹配</h3>
+            <div class="match-list" id="prototypeMatches"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>推荐结果</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>歌曲</th>
+                  <th>歌手</th>
+                  <th>流派</th>
+                  <th>总分</th>
+                  <th>相似度</th>
+                  <th>能量</th>
+                  <th>原声</th>
+                </tr>
+              </thead>
+              <tbody id="recommendationTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./data/share-data.js"></script>
+  <script>
+    const data = window.SHARE_DATA;
+    const ATTR_LABELS = {
+      arousal: "唤醒度",
+      socialness: "社交感",
+      focus: "专注度",
+      relaxation: "放松感",
+      nature: "自然感",
+      urban: "都市感",
+      night: "夜晚感",
+      openness: "开阔度",
+      warmth: "温暖感"
+    };
+    const MUSIC_LABELS = {
+      energy: "能量",
+      acousticness: "原声感",
+      valence: "情绪正向",
+      danceability: "舞动感",
+      instrumentalness: "器乐感",
+      tempo_norm: "节奏强度"
+    };
+
+    if (!data || !Array.isArray(data.scenes) || data.scenes.length === 0) {
+      document.body.innerHTML = '<div class="page"><div class="panel"><h2>分享数据不存在</h2><p class="muted">请先运行 `python scripts/build_share_bundle.py` 生成分享数据。</p></div></div>';
+      throw new Error("share data not found");
+    }
+
+    const state = {
+      currentSceneId: data.scenes[0].id
+    };
+
+    function byId(id) {
+      return document.getElementById(id);
+    }
+
+    function clampPercent(value) {
+      return Math.max(0, Math.min(100, Number(value || 0) * 100));
+    }
+
+    function renderMeta() {
+      const meta = data.meta || {};
+      byId("subtitle").textContent = meta.subtitle || "静态分享版音乐推荐可视化";
+      byId("generatedAt").textContent = "生成时间 " + (meta.generated_at || "-");
+      byId("songCount").textContent = "歌曲数 " + (meta.songs_count || "-");
+      byId("topK").textContent = "Top-K " + (meta.top_k || "-");
+      byId("notes").innerHTML = (meta.notes || []).map(note => `<div class="note">${note}</div>`).join("");
+    }
+
+    function renderSceneButtons() {
+      byId("sceneButtons").innerHTML = data.scenes.map(scene => {
+        const active = scene.id === state.currentSceneId ? "active" : "";
+        return `<button class="scene-btn ${active}" data-scene-id="${scene.id}">${scene.icon} ${scene.label}</button>`;
+      }).join("");
+      document.querySelectorAll(".scene-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          state.currentSceneId = button.dataset.sceneId;
+          renderAll();
+        });
+      });
+    }
+
+    function renderSamples() {
+      const samples = data.samples || [];
+      byId("sampleList").innerHTML = samples.map(sample => {
+        const active = sample.scene_id === state.currentSceneId ? "active" : "";
+        return `
+          <div class="sample-card ${active}" data-scene-id="${sample.scene_id}">
+            <img src="./${sample.image}" alt="${sample.label}">
+            <div class="sample-card-body">
+              <p class="sample-card-title">${sample.label}</p>
+              <p class="sample-card-desc">${sample.description}</p>
+            </div>
+          </div>
+        `;
+      }).join("");
+      document.querySelectorAll(".sample-card").forEach(card => {
+        card.addEventListener("click", () => {
+          state.currentSceneId = card.dataset.sceneId;
+          renderAll();
+        });
+      });
+    }
+
+    function currentScene() {
+      return data.scenes.find(scene => scene.id === state.currentSceneId) || data.scenes[0];
+    }
+
+    function renderMetricRows(targetId, entries, labels) {
+      byId(targetId).innerHTML = entries.map(([key, value]) => `
+        <div class="metric-row">
+          <div>${labels[key] || key}</div>
+          <div class="metric-track"><div class="metric-fill" style="width:${clampPercent(value)}%"></div></div>
+          <div>${Number(value || 0).toFixed(2)}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderSceneDetail(scene) {
+      byId("sceneIcon").textContent = scene.icon || "♪";
+      byId("sceneLabel").textContent = scene.label;
+      byId("sceneDescription").textContent = scene.description || "";
+      byId("sceneTags").innerHTML = (scene.prototype_tags || []).map(tag => `<span class="tag">${tag}</span>`).join("");
+      byId("sceneReason").textContent = scene.recommendation_reason || "该场景暂无推荐解释。";
+
+      renderMetricRows(
+        "attributeList",
+        Object.entries(scene.attribute_scores || {}),
+        ATTR_LABELS
+      );
+
+      renderMetricRows(
+        "musicTargets",
+        Object.entries(scene.music_targets || {}).filter(([key]) => key !== "tempo"),
+        MUSIC_LABELS
+      );
+
+      renderMetricRows(
+        "genrePriors",
+        Object.entries(scene.genre_priors || {}),
+        {}
+      );
+
+      byId("attributeSummary").innerHTML = (scene.attribute_summary || []).map(item => `
+        <div class="match-chip">
+          <div>${ATTR_LABELS[item.attribute] || item.attribute}</div>
+          <div class="score">${Number(item.score || 0).toFixed(2)}</div>
+        </div>
+      `).join("");
+
+      byId("prototypeMatches").innerHTML = (scene.prototype_matches || []).map(item => `
+        <div class="match-chip">
+          <div>${item.scene}</div>
+          <div class="score">${Number(item.similarity || 0).toFixed(3)}</div>
+        </div>
+      `).join("");
+
+      const recommendations = scene.recommendations || [];
+      byId("recommendationTable").innerHTML = recommendations.length ? recommendations.map(item => `
+        <tr>
+          <td><span class="rank">${item.rank || "-"}</span></td>
+          <td>${item.title || ""}</td>
+          <td class="muted">${item.artist || ""}</td>
+          <td>${item.genre || ""}</td>
+          <td class="score">${Number(item.final_score || 0).toFixed(3)}</td>
+          <td>${Number(item.feature_sim || 0).toFixed(3)}</td>
+          <td>${Number(item.energy || 0).toFixed(2)}</td>
+          <td>${Number(item.acousticness || 0).toFixed(2)}</td>
+        </tr>
+      `).join("") : '<tr><td colspan="8" class="empty">暂无推荐结果</td></tr>';
+    }
+
+    function renderAll() {
+      renderSceneButtons();
+      renderSamples();
+      renderSceneDetail(currentScene());
+    }
+
+    renderMeta();
+    renderAll();
+  </script>
+</body>
+</html>

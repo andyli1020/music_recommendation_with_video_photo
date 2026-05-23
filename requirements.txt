@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+scipy
+surprise
+matplotlib
+seaborn
+flask
+requests
+pillow
+open-clip-torch
+torch
