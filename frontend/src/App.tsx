@@ -70,6 +70,7 @@ import {
 import { GridPattern } from "@/components/ui/grid-pattern"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { Separator } from "@/components/ui/separator"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 type UploadContext = {
   confidence: number
@@ -436,6 +437,7 @@ function RecommendationApp() {
   const uploadPreviewImage = uploadContext?.previewUrl ?? null
   const topGenres = getTopGenres(deferredSceneResult?.genre_priors)
   const dominantAttribute = deferredSceneResult?.attribute_summary?.[0] ?? null
+  const attributeHighlights = deferredSceneResult?.attribute_summary.slice(0, 4) ?? []
   const leadTracks = deferredSceneResult?.recommendations.slice(0, 5) ?? []
   const leadTrack = leadTracks[0] ?? null
   const allTracks = deferredSceneResult?.recommendations ?? []
@@ -453,7 +455,7 @@ function RecommendationApp() {
   } as CSSProperties
 
   return (
-    <div ref={appRef} className="relative min-h-screen overflow-hidden" style={sceneTheme}>
+    <div ref={appRef} className="relative min-h-screen overflow-x-hidden" style={sceneTheme}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,10,9,0.92)_0%,rgba(6,9,8,0.98)_52%,rgba(4,6,5,1)_100%)]" />
         <div
@@ -468,12 +470,53 @@ function RecommendationApp() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1600px] px-3 py-3 sm:px-5 sm:py-5">
-        <div className="grid gap-4 xl:grid-cols-[270px_minmax(0,1fr)_320px]">
-          <aside className="space-y-4 xl:sticky xl:top-5 xl:self-start">
+      <div className="relative mx-auto flex min-h-screen max-w-[1720px] flex-col gap-3 px-3 py-3 sm:px-5 sm:py-5">
+        <header
+          data-shell-item
+          className="flex min-h-14 items-center justify-between gap-3 rounded-[1.25rem] border border-white/8 bg-[#0d1110]/82 px-4 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+        >
+          <div className="flex min-w-0 items-center gap-3">
+            <div
+              className="flex size-10 shrink-0 items-center justify-center rounded-2xl shadow-[0_0_36px_var(--scene-shadow)]"
+              style={{
+                backgroundColor: "var(--scene-accent-soft)",
+                color: "var(--scene-accent)",
+              }}
+            >
+              <Disc3 className="size-5" />
+            </div>
+            <div className="min-w-0">
+              <div className="truncate text-sm font-semibold text-white">Scene Radio</div>
+              <div className="hidden text-xs uppercase tracking-[0.22em] text-white/42 sm:block">
+                Full-screen recommendation cockpit
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href="/technology"
+              className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs text-white/70 transition hover:bg-white/8 hover:text-white"
+            >
+              Tech
+            </a>
+            <a
+              href="/product-design"
+              className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs text-white/70 transition hover:bg-white/8 hover:text-white"
+            >
+              Product
+            </a>
+            <Badge className="text-[#102515]" style={{ backgroundColor: sceneMeta.accent }}>
+              {uploadContext ? "Image matched" : "Scene preset"}
+            </Badge>
+          </div>
+        </header>
+
+        <div className="grid gap-4 xl:grid-cols-[280px_minmax(0,1fr)_340px]">
+          <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
             <Card
               data-shell-item
-              className="overflow-hidden border-white/8 bg-[#0d1110]/90 shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
+              className="hidden overflow-hidden border-white/8 bg-[#0d1110]/90 shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
             >
               <CardContent className="relative p-5">
                 <GridPattern
@@ -576,14 +619,14 @@ function RecommendationApp() {
                           : undefined
                       }
                       className={cn(
-                        "w-full rounded-[1.2rem] border px-4 py-3 text-left transition",
+                        "w-full rounded-[1.2rem] border px-3 py-2.5 text-left transition",
                         active
                           ? ""
                           : "border-white/7 bg-white/[0.03] hover:border-white/14 hover:bg-white/[0.05]"
                       )}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="relative h-[4.75rem] w-[4.75rem] shrink-0 overflow-hidden rounded-[1rem] border border-white/10 bg-black/20">
+                        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[1rem] border border-white/10 bg-black/20">
                           <img
                             src={meta.image}
                             alt={meta.label}
@@ -612,7 +655,7 @@ function RecommendationApp() {
                               </Badge>
                             ) : null}
                           </div>
-                          <div className="mt-1 text-xs leading-6 text-[#8d9b91]">
+                          <div className="mt-1 max-h-10 overflow-hidden text-xs leading-5 text-[#8d9b91]">
                             {meta.mood}
                           </div>
                           <div className="mt-3 flex flex-wrap gap-1.5">
@@ -649,10 +692,10 @@ function RecommendationApp() {
                   : undefined
               }
               className={cn(
-                "group relative w-full overflow-hidden rounded-[1.6rem] border p-5 text-left transition",
+                "group relative w-full shrink-0 overflow-hidden rounded-[1.6rem] border p-5 text-left shadow-[0_18px_54px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5",
                 dragActive
                   ? ""
-                  : "border-white/8 bg-[#121816]/92 hover:border-white/16 hover:bg-white/[0.05]"
+                  : "border-white/8 bg-[#121816]/92 hover:border-[var(--scene-outline)] hover:bg-white/[0.055] hover:shadow-[0_24px_70px_var(--scene-shadow)]"
               )}
             >
               <div
@@ -698,16 +741,16 @@ function RecommendationApp() {
             />
           </aside>
 
-          <main className="space-y-4">
+          <main className="min-w-0 space-y-4">
             {error ? <AlertCard message={error} /> : null}
 
             <section
               data-shell-item
-              className="overflow-hidden rounded-[2rem] border border-white/8 bg-[#111614]/92 shadow-[0_30px_90px_rgba(0,0,0,0.32)]"
+              className="min-h-[calc(100dvh-6.75rem)] overflow-hidden rounded-[2rem] border border-white/8 bg-[#111614]/92 shadow-[0_30px_90px_rgba(0,0,0,0.32)]"
               style={{ boxShadow: `0 30px 90px ${hexToRgba(sceneMeta.accent, 0.11)}` }}
             >
-              <div className="grid gap-0 xl:grid-cols-[0.92fr_1.08fr]">
-                <div className="relative min-h-[420px] overflow-hidden border-b border-white/8 xl:border-r xl:border-b-0">
+              <div className="grid min-h-[calc(100dvh-6.75rem)] gap-0 xl:grid-cols-[0.98fr_1.02fr]">
+                <div className="relative min-h-[min(62dvh,680px)] overflow-hidden border-b border-white/8 xl:min-h-full xl:border-r xl:border-b-0">
                   <img
                     src={heroImage}
                     alt={sceneMeta.label}
@@ -766,8 +809,8 @@ function RecommendationApp() {
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-8">
-                  <div className="flex h-full flex-col justify-between gap-7">
+                <div className="p-5 sm:p-6 xl:p-7">
+                  <div className="space-y-5">
                     <div className="space-y-5">
                       <div className="space-y-3">
                         <div className="text-xs tracking-[0.22em] uppercase text-white/45">
@@ -807,10 +850,37 @@ function RecommendationApp() {
                         </div>
                       </div>
 
-                      <div className="rounded-[1.6rem] border border-white/8 bg-[linear-gradient(135deg,rgba(255,255,255,0.075),rgba(255,255,255,0.025))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                      <div className="flex flex-wrap gap-3">
+                        <Button
+                          size="lg"
+                          className="h-14 min-w-[12.75rem] gap-2.5 rounded-[1.1rem] px-6 text-base font-semibold text-[#102515] shadow-[0_18px_50px_var(--scene-shadow)] ring-1 ring-white/20 transition-transform hover:-translate-y-0.5 hover:shadow-[0_24px_70px_var(--scene-shadow)]"
+                          style={{ backgroundColor: sceneMeta.accent }}
+                          onClick={() => fileInputRef.current?.click()}
+                        >
+                          {uploading ? (
+                            <LoaderCircle className="size-5 animate-spin" />
+                          ) : (
+                            <ImageUp className="size-5" />
+                          )}
+                          上传图片识别
+                        </Button>
+                        <Button
+                          size="lg"
+                          variant="outline"
+                          className="h-14 rounded-[1.1rem] border-white/14 bg-black/18 px-5 text-white hover:bg-white/10"
+                          onClick={() =>
+                            document.getElementById("track-list")?.scrollIntoView({ behavior: "smooth" })
+                          }
+                        >
+                          <Wand2 className="size-4" />
+                          查看推荐列表
+                        </Button>
+                      </div>
+
+                      <div className="rounded-[1.35rem] border border-white/8 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
                         {uploadPreviewImage ? (
-                          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/30 sm:w-28">
+                          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                            <div className="relative h-20 w-full shrink-0 overflow-hidden rounded-[1rem] border border-white/10 bg-black/30 sm:w-20">
                               <img
                                 src={uploadPreviewImage}
                                 alt={uploadContext?.fileName ?? "uploaded scene"}
@@ -821,15 +891,15 @@ function RecommendationApp() {
                               </div>
                             </div>
 
-                            <div className="min-w-0 flex-1 space-y-3">
+                            <div className="min-w-0 flex-1 space-y-2">
                               <div>
                                 <div className="text-xs tracking-[0.18em] uppercase text-white/42">
                                   Upload evidence
                                 </div>
-                                <div className="mt-1 truncate text-base font-medium text-white">
+                                <div className="mt-1 truncate text-sm font-medium text-white">
                                   {uploadContext?.fileName}
                                 </div>
-                                <div className="mt-1 text-sm leading-6 text-[#aebcb1]">
+                                <div className="mt-1 text-xs leading-5 text-[#aebcb1]">
                                   由你上传的图片识别，并作为本次推荐的场景依据。
                                 </div>
                               </div>
@@ -873,7 +943,7 @@ function RecommendationApp() {
                         )}
                       </div>
 
-                      <div className="grid gap-3 md:grid-cols-[1.08fr_0.92fr]">
+                      <div className="grid gap-3 2xl:grid-cols-[1.08fr_0.92fr]">
                         <div
                           className="rounded-[1.45rem] border border-white/8 p-4"
                           style={{
@@ -925,17 +995,17 @@ function RecommendationApp() {
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex flex-wrap gap-3">
+                      <div className="hidden flex-wrap gap-3">
                         <Button
                           size="lg"
-                          className="text-[#102515] transition-transform hover:-translate-y-0.5"
+                          className="h-14 min-w-[12.75rem] gap-2.5 rounded-[1.1rem] px-6 text-base font-semibold text-[#102515] shadow-[0_18px_50px_var(--scene-shadow)] ring-1 ring-white/20 transition-transform hover:-translate-y-0.5 hover:shadow-[0_24px_70px_var(--scene-shadow)]"
                           style={{ backgroundColor: sceneMeta.accent }}
                           onClick={() => fileInputRef.current?.click()}
                         >
                           {uploading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <LoaderCircle className="size-5 animate-spin" />
                           ) : (
-                            <ImageUp className="size-4" />
+                            <ImageUp className="size-5" />
                           )}
                           上传图片识别
                         </Button>
@@ -971,16 +1041,16 @@ function RecommendationApp() {
               </div>
             </section>
 
-            <div ref={insightsRef} className="space-y-4">
+            <div ref={insightsRef} className="min-w-0 space-y-4">
               {loading || !deferredSceneResult ? (
                 <LoadingGrid />
               ) : (
                 <>
-                  <div className="grid gap-4 2xl:grid-cols-[1.1fr_0.9fr]">
-                    <BlurFade delay={0.08} inView>
+                  <div className="grid min-w-0 gap-4 2xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
+                    <BlurFade className="min-w-0" delay={0.08} inView>
                       <Card
                         data-reveal
-                        className="overflow-hidden border-white/8 bg-[#121715]/92"
+                        className="min-w-0 overflow-hidden border-white/8 bg-[#121715]/92"
                       >
                         <CardHeader className="pb-3">
                           <CardTitle className="flex items-center gap-2 text-white">
@@ -999,10 +1069,10 @@ function RecommendationApp() {
                       </Card>
                     </BlurFade>
 
-                    <BlurFade delay={0.12} inView>
+                    <BlurFade className="min-w-0" delay={0.12} inView>
                       <Card
                         data-reveal
-                        className="relative overflow-hidden border-white/8 bg-[#121715]/92"
+                        className="relative min-w-0 overflow-hidden border-white/8 bg-[#121715]/92"
                       >
                         <BorderBeam
                           size={210}
@@ -1020,25 +1090,55 @@ function RecommendationApp() {
                             这是当前场景转译后的属性画像，更像一张音乐人格指纹。
                           </CardDescription>
                         </CardHeader>
-                        <CardContent>
-                          <ReactECharts
-                            notMerge
-                            lazyUpdate
-                            option={buildRadarOption(
-                              deferredSceneResult.attribute_scores,
-                              sceneMeta.accent,
-                              sceneMeta.accentAlt
-                            )}
-                            style={{ height: 340 }}
-                          />
+                        <CardContent className="grid min-w-0 gap-5 2xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1fr)] 2xl:items-center">
+                          <div className="min-w-0 space-y-4">
+                            <div
+                              className="rounded-[1.3rem] border border-white/8 p-4"
+                              style={{
+                                background: `linear-gradient(135deg, ${hexToRgba(sceneMeta.accent, 0.16)}, rgba(255,255,255,0.03))`,
+                              }}
+                            >
+                              <div className="text-[11px] uppercase tracking-[0.2em] text-white/45">
+                                Dominant cue
+                              </div>
+                              <p className="mt-2 text-sm leading-7 text-[#edf4ef]">
+                                {buildAttributeSummary(dominantAttribute)}
+                              </p>
+                            </div>
+
+                            <div className="space-y-3">
+                              {attributeHighlights.map((attribute) => (
+                                <MetricBar
+                                  key={attribute.attribute}
+                                  compact
+                                  label={ATTR_LABELS[attribute.attribute] ?? attribute.attribute}
+                                  tone={attribute.attribute === "warmth" ? "gold" : "green"}
+                                  value={attribute.score}
+                                />
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="min-w-0 rounded-[1.35rem] border border-white/8 bg-black/16 p-2">
+                            <ReactECharts
+                              notMerge
+                              lazyUpdate
+                              option={buildRadarOption(
+                                deferredSceneResult.attribute_scores,
+                                sceneMeta.accent,
+                                sceneMeta.accentAlt
+                              )}
+                              style={{ height: 300, width: "100%" }}
+                            />
+                          </div>
                         </CardContent>
                       </Card>
                     </BlurFade>
                   </div>
 
-                  <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-                    <BlurFade delay={0.16} inView>
-                        <Card data-reveal className="border-white/8 bg-[#121715]/92">
+                  <div className="grid min-w-0 gap-4 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+                    <BlurFade className="min-w-0" delay={0.16} inView>
+                        <Card data-reveal className="min-w-0 border-white/8 bg-[#121715]/92">
                         <CardHeader>
                           <CardTitle className="flex items-center gap-2 text-white">
                             <Sparkles className="size-4" style={{ color: sceneMeta.accentAlt }} />
@@ -1100,8 +1200,8 @@ function RecommendationApp() {
                       </Card>
                     </BlurFade>
 
-                    <BlurFade delay={0.2} inView>
-                        <Card data-reveal className="border-white/8 bg-[#121715]/92">
+                    <BlurFade className="min-w-0" delay={0.2} inView>
+                        <Card data-reveal className="min-w-0 border-white/8 bg-[#121715]/92">
                         <CardHeader>
                           <CardTitle className="flex items-center gap-2 text-white">
                             <BarChart3 className="size-4" style={{ color: sceneMeta.accent }} />
@@ -1111,7 +1211,7 @@ function RecommendationApp() {
                             展示这一场景下最先被放大的音乐流派倾向。
                           </CardDescription>
                         </CardHeader>
-                        <CardContent>
+                        <CardContent className="min-w-0">
                           <ReactECharts
                             notMerge
                             lazyUpdate
@@ -1127,11 +1227,11 @@ function RecommendationApp() {
                     </BlurFade>
                   </div>
 
-                  <BlurFade delay={0.24} inView>
+                  <BlurFade className="min-w-0" delay={0.24} inView>
                     <Card
                       id="track-list"
                       data-reveal
-                      className="border-white/8 bg-[#121715]/92"
+                      className="min-w-0 border-white/8 bg-[#121715]/92"
                     >
                       <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-white">
@@ -1154,8 +1254,8 @@ function RecommendationApp() {
             </div>
           </main>
 
-          <aside className="space-y-4 xl:sticky xl:top-5 xl:self-start">
-            <Card data-shell-item className="border-white/8 bg-[#101513]/92">
+          <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
+            <Card data-shell-item className="shrink-0 border-white/8 bg-[#101513]/92">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base text-white">Now Playing</CardTitle>
                 <CardDescription>
@@ -1175,6 +1275,29 @@ function RecommendationApp() {
                   <div className="text-2xl font-semibold text-white">{sceneMeta.label}</div>
                   <div className="text-sm leading-7 text-[#9fb0a4]">{sceneMeta.mood}</div>
                 </div>
+
+                {leadTrack ? (
+                  <div
+                    className="rounded-[1.35rem] border border-white/8 p-4"
+                    style={{
+                      background: `linear-gradient(135deg, ${hexToRgba(sceneMeta.accent, 0.16)}, rgba(255,255,255,0.035))`,
+                    }}
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.2em] text-white/45">
+                      Now cue
+                    </div>
+                    <div className="mt-3 text-lg font-semibold text-white">{leadTrack.title}</div>
+                    <div className="mt-1 text-sm text-white/58">{leadTrack.artist}</div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-white/12 bg-black/18 text-white/75">
+                        {leadTrack.genre}
+                      </Badge>
+                      <Badge variant="outline" className="border-white/12 bg-black/18 text-white/75">
+                        score {leadTrack.final_score.toFixed(3)}
+                      </Badge>
+                    </div>
+                  </div>
+                ) : null}
 
                 <div className="rounded-[1.3rem] border border-white/8 bg-black/20 p-4">
                   <div className="flex items-center justify-between gap-3">
@@ -1233,43 +1356,31 @@ function RecommendationApp() {
                     ))}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            <Card data-shell-item className="border-white/8 bg-[#101513]/92">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base text-white">Atmosphere board</CardTitle>
-                <CardDescription>
-                  把当前场景的 cue、属性和推荐方向收成一张更像 moodboard 的说明卡。
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div
-                  className="rounded-[1.3rem] border border-white/8 p-4"
-                  style={{
-                    background: `linear-gradient(135deg, ${hexToRgba(sceneMeta.accent, 0.16)}, rgba(255,255,255,0.03))`,
-                  }}
-                >
-                  <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">
-                    Scene cue
+                <Separator className="bg-white/8" />
+
+                <div className="space-y-3">
+                  <div className="text-xs tracking-[0.18em] uppercase text-white/45">
+                    Atmosphere notes
                   </div>
-                  <p className="mt-2 text-sm leading-7 text-[#eff4f0]">{sceneMeta.cue}</p>
-                </div>
+                  <div
+                    className="rounded-[1.3rem] border border-white/8 p-4"
+                    style={{
+                      background: `linear-gradient(135deg, ${hexToRgba(sceneMeta.accent, 0.16)}, rgba(255,255,255,0.03))`,
+                    }}
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+                      Scene cue
+                    </div>
+                    <p className="mt-2 text-sm leading-7 text-[#eff4f0]">{sceneMeta.cue}</p>
+                  </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {sceneMeta.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] text-white/68"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="grid gap-3">
+                    <SideNote title="当前氛围" body={sceneMeta.blurb} />
+                    <SideNote title="主导属性" body={buildAttributeSummary(dominantAttribute)} />
+                    <SideNote title="推荐方向" body={buildGenreSummary(topGenres)} />
+                  </div>
                 </div>
-
-                <SideNote title="当前氛围" body={sceneMeta.blurb} />
-                <SideNote title="主导属性" body={buildAttributeSummary(dominantAttribute)} />
-                <SideNote title="推荐方向" body={buildGenreSummary(topGenres)} />
               </CardContent>
             </Card>
           </aside>
@@ -1679,53 +1790,21 @@ function ProductDesignPage() {
           ))}
         </section>
 
-        <section id="requirements" className="mt-5 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card className="border-white/8 bg-[#101512]/90">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Layers3 className="size-4 text-[#f1cf7a]" />
-                核心需求流程
-              </CardTitle>
-              <CardDescription>
-                从进入产品到建立推荐信任感，需求设计更像一条连续路径，而不是离散功能点。
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-3">
-              {REQUIREMENT_STAGES.map((stage) => (
-                <RequirementStageCard key={stage.step} stage={stage} />
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="border-white/8 bg-[#101512]/90">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <CheckCheck className="size-4 text-emerald-300" />
-                需求判断准则
-              </CardTitle>
-              <CardDescription>
-                新需求是否该进来，优先看它是不是在强化产品主路径，而不是单纯增加页面热闹程度。
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <ProductGuideline
-                title="结论优先"
-                body="首屏先告诉用户当前是什么场景、适合什么音乐，解释层放在后面承接。"
-              />
-              <ProductGuideline
-                title="输入可见"
-                body="上传图片要持续保留，用户需要知道推荐结果确实是基于自己的输入产生。"
-              />
-              <ProductGuideline
-                title="解释不过载"
-                body="解释层要帮助理解，不要把技术说明直接端给普通用户。"
-              />
-              <ProductGuideline
-                title="播放器感"
-                body="推荐结果更像歌单与播放队列，而不是分析平台或实验页面。"
-              />
-            </CardContent>
-          </Card>
+        <section id="requirements" className="mt-5">
+          <div className="overflow-hidden rounded-[2rem] border border-white/8 bg-[#101512]/90 p-5 shadow-[0_28px_86px_rgba(0,0,0,0.32)] sm:p-6">
+            <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-lg font-semibold text-white">
+                  <Layers3 className="size-4 text-[#f1cf7a]" />
+                  产品需求设计视图
+                </div>
+                <p className="mt-2 max-w-3xl text-sm leading-7 text-[#b4c2b8]">
+                  可在结构化需求拆解和完整产品需求设计图之间切换，方便讲产品逻辑时先看路径，再看全图。
+                </p>
+              </div>
+            </div>
+            <ProductRequirementTabs />
+          </div>
         </section>
 
         <section className="mt-5 grid gap-4 xl:grid-cols-3">
@@ -1898,7 +1977,7 @@ function TechnologyPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <ArchitectureDiagram />
+              <ArchitectureTabs />
             </CardContent>
           </Card>
         </section>
@@ -2093,6 +2172,121 @@ function MetricCard({ metric }: { metric: MetricItem }) {
       <div className="mt-3 text-2xl font-semibold text-white">{metric.value}</div>
       <p className="mt-3 text-sm leading-7 text-[#b4c2b8]">{metric.note}</p>
     </div>
+  )
+}
+
+function ProductRequirementTabs() {
+  return (
+    <Tabs defaultValue="structure" className="flex-col gap-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <TabsList className="border border-white/10 bg-black/24 text-white/60">
+          <TabsTrigger value="structure" className="px-3 text-xs">
+            需求结构
+          </TabsTrigger>
+          <TabsTrigger value="image" className="px-3 text-xs">
+            设计图
+          </TabsTrigger>
+        </TabsList>
+        <div className="text-xs leading-6 text-white/45">
+          和技术架构图一样，可在可读拆解与完整图片之间切换展示。
+        </div>
+      </div>
+
+      <TabsContent value="structure" className="w-full min-w-0">
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+          <Card className="border-white/8 bg-white/[0.035]">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-white">
+                <Layers3 className="size-4 text-[#f1cf7a]" />
+                核心需求流程
+              </CardTitle>
+              <CardDescription>
+                从进入产品到建立推荐信任感，需求设计更像一条连续路径，而不是离散功能点。
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-3">
+              {REQUIREMENT_STAGES.map((stage) => (
+                <RequirementStageCard key={stage.step} stage={stage} />
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="border-white/8 bg-white/[0.035]">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-white">
+                <CheckCheck className="size-4 text-emerald-300" />
+                需求判断准则
+              </CardTitle>
+              <CardDescription>
+                新需求是否该进来，优先看它是不是在强化产品主路径，而不是单纯增加页面热闹程度。
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <ProductGuideline
+                title="结论优先"
+                body="首屏先告诉用户当前是什么场景、适合什么音乐，解释层放在后面承接。"
+              />
+              <ProductGuideline
+                title="输入可见"
+                body="上传图片要持续保留，用户需要知道推荐结果确实是基于自己的输入产生。"
+              />
+              <ProductGuideline
+                title="解释不过载"
+                body="解释层要帮助理解，不要把技术说明直接端给普通用户。"
+              />
+              <ProductGuideline
+                title="播放器感"
+                body="推荐结果更像歌单与播放队列，而不是分析平台或实验页面。"
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="image" className="w-full min-w-0">
+        <div className="overflow-hidden rounded-[1.6rem] border border-white/8 bg-white p-2 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+          <img
+            src="/product-design/product-need.png"
+            alt="视觉场景驱动的音乐推荐产品需求设计图"
+            className="h-auto w-full rounded-[1.1rem] object-contain"
+          />
+        </div>
+      </TabsContent>
+    </Tabs>
+  )
+}
+
+function ArchitectureTabs() {
+  return (
+    <Tabs defaultValue="interactive" className="flex-col gap-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <TabsList className="border border-white/10 bg-black/24 text-white/60">
+          <TabsTrigger value="interactive" className="px-3 text-xs">
+            分层视图
+          </TabsTrigger>
+          <TabsTrigger value="image" className="px-3 text-xs">
+            架构图
+          </TabsTrigger>
+        </TabsList>
+        <div className="text-xs leading-6 text-white/45">
+          可在交互分层和完整软件架构图之间切换展示。
+        </div>
+      </div>
+
+      <TabsContent value="interactive" className="w-full min-w-0">
+        <ArchitectureDiagram />
+      </TabsContent>
+
+      <TabsContent value="image" className="w-full min-w-0">
+        <div className="overflow-hidden rounded-[1.6rem] border border-white/8 bg-white p-2 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+          <img
+            src="/architecture/structure-v3.png"
+            alt="视觉场景驱动的音乐推荐系统软件架构图"
+            className="h-auto w-full rounded-[1.1rem] object-contain"
+          />
+        </div>
+      </TabsContent>
+    </Tabs>
   )
 }
 

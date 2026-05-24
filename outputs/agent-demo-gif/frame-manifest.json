@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-05-24T01:31:07.931Z",
+  "source_url": "http://127.0.0.1:4173/",
+  "frames": [
+    {
+      "name": "home-cafe",
+      "duration_ms": 900,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\01-home-cafe.png"
+    },
+    {
+      "name": "scene-gym",
+      "duration_ms": 900,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\02-scene-gym.png"
+    },
+    {
+      "name": "gym-insights",
+      "duration_ms": 1000,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\03-gym-insights.png"
+    },
+    {
+      "name": "image-upload",
+      "duration_ms": 1100,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\04-image-upload.png"
+    },
+    {
+      "name": "technology-page",
+      "duration_ms": 900,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\05-technology-page.png"
+    },
+    {
+      "name": "product-page",
+      "duration_ms": 900,
+      "path": "C:\\0_code\\01_music_recommendation\\outputs\\agent-demo-gif\\frames\\06-product-page.png"
+    }
+  ]
+}
