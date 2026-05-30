@@ -3,111 +3,317 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>视界伴音 - 分享版</title>
+  <title>视界伴音 - 静态分享版</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121933;
-      --panel-2: #18213f;
-      --line: #2a355f;
-      --text: #eef2ff;
-      --muted: #a6b0d4;
-      --primary: #7cc8ff;
-      --accent: #c89bff;
-      --good: #74e0b3;
+      --bg: #07131c;
+      --bg-soft: #0c1b28;
+      --panel: rgba(14, 29, 43, 0.88);
+      --panel-strong: rgba(17, 36, 54, 0.96);
+      --card: rgba(255, 255, 255, 0.04);
+      --line: rgba(136, 188, 214, 0.18);
+      --line-strong: rgba(136, 188, 214, 0.34);
+      --text: #eef5f7;
+      --text-soft: #a9bdc9;
+      --accent: #7fe6d1;
+      --accent-2: #f2cb73;
+      --accent-3: #7cb6ff;
+      --accent-4: #ff9a6a;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
     }
 
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
+      color: var(--text);
       font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(124, 200, 255, 0.18), transparent 28%),
-        radial-gradient(circle at top left, rgba(200, 155, 255, 0.12), transparent 24%),
-        var(--bg);
-      color: var(--text);
+        radial-gradient(circle at 12% 12%, rgba(127, 230, 209, 0.15), transparent 25%),
+        radial-gradient(circle at 88% 10%, rgba(242, 203, 115, 0.12), transparent 22%),
+        linear-gradient(180deg, #06111a 0%, #07131c 48%, #091821 100%);
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .page {
-      max-width: 1280px;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 28px 20px 40px;
+      padding: 20px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(10, 20, 29, 0.82);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    .brand {
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      margin-top: 2px;
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .nav-link {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-soft);
+      font-size: 13px;
+      transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--line-strong);
+      color: var(--text);
+      transform: translateY(-1px);
     }
 
     .hero {
-      background: linear-gradient(135deg, rgba(24, 33, 63, 0.96), rgba(13, 18, 36, 0.96));
+      position: relative;
+      overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(13, 28, 41, 0.95), rgba(9, 21, 31, 0.95));
+      box-shadow: var(--shadow);
     }
 
-    .hero-top {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(127, 230, 209, 0.12), transparent 38%),
+        radial-gradient(circle at 92% 18%, rgba(124, 182, 255, 0.14), transparent 25%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(127, 230, 209, 0.12);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .title {
-      font-size: clamp(28px, 5vw, 40px);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 28px;
+      align-items: end;
+      margin-top: 22px;
+    }
+
+    .hero h1 {
       margin: 0;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
     }
 
-    .subtitle {
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 15px;
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.8;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 22px;
     }
 
-    .badge {
-      padding: 8px 12px;
+    .pill {
+      padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.03);
-      color: var(--muted);
+      color: var(--text-soft);
       font-size: 13px;
     }
 
-    .notes {
-      margin-top: 18px;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-action.primary {
+      background: var(--accent-2);
+      color: #231b08;
+    }
+
+    .hero-action.secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .hero-panel {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
     }
 
-    .note {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 16px;
-      padding: 14px 16px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .toolbar {
-      margin-top: 22px;
+    .hero-stat-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
 
-    .section-title {
-      margin: 0 0 10px;
-      font-size: 14px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
+    .hero-stat,
+    .hero-note {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-stat-label {
+      color: var(--text-soft);
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .hero-stat-value {
+      margin-top: 10px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .hero-note {
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-note-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .hero-note p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 0;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    .section-note {
+      max-width: 340px;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .scene-toolbar {
+      display: grid;
+      gap: 16px;
     }
 
     .scene-buttons,
@@ -120,126 +326,202 @@
     .scene-btn,
     .sample-card {
       border: 1px solid var(--line);
-      background: var(--panel);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text);
-      border-radius: 16px;
       transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
     }
 
     .scene-btn {
       padding: 12px 16px;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .sample-card {
+      width: 184px;
+      overflow: hidden;
+      cursor: pointer;
     }
 
     .scene-btn:hover,
     .sample-card:hover {
       transform: translateY(-1px);
-      border-color: var(--primary);
+      border-color: var(--line-strong);
     }
 
     .scene-btn.active,
     .sample-card.active {
-      background: linear-gradient(135deg, rgba(124, 200, 255, 0.14), rgba(200, 155, 255, 0.1));
-      border-color: var(--primary);
-    }
-
-    .sample-card {
-      width: 180px;
-      overflow: hidden;
-      cursor: pointer;
+      background: linear-gradient(135deg, rgba(127, 230, 209, 0.12), rgba(124, 182, 255, 0.1));
+      border-color: var(--accent);
     }
 
     .sample-card img {
-      display: block;
       width: 100%;
-      height: 112px;
+      height: 116px;
       object-fit: cover;
-      background: #0a0f1f;
+      background: #09131b;
     }
 
     .sample-card-body {
-      padding: 10px 12px 12px;
+      padding: 12px;
     }
 
     .sample-card-title {
       margin: 0 0 4px;
       font-size: 14px;
+      font-weight: 600;
     }
 
     .sample-card-desc {
       margin: 0;
-      color: var(--muted);
+      color: var(--text-soft);
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    .layout {
-      margin-top: 24px;
+    .scene-layout {
       display: grid;
-      grid-template-columns: 360px 1fr;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
       gap: 18px;
-      align-items: start;
+      margin-top: 22px;
     }
 
-    .panel {
-      background: var(--panel);
+    .scene-main {
+      overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
+      border-radius: 26px;
+      background: rgba(9, 22, 33, 0.7);
     }
 
-    .panel h2,
-    .panel h3 {
-      margin: 0 0 14px;
+    .scene-media {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero-scene {
+    .scene-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .scene-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 12, 18, 0.16), rgba(5, 12, 18, 0.66));
+      pointer-events: none;
+    }
+
+    .scene-overlay {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1;
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: end;
+      justify-content: space-between;
     }
 
-    .hero-scene-icon {
-      width: 56px;
-      height: 56px;
+    .scene-overlay-title {
+      display: grid;
+      gap: 8px;
+    }
+
+    .scene-caption {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      background: rgba(124, 200, 255, 0.12);
-      font-size: 28px;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(7, 16, 24, 0.74);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
     }
 
-    .muted {
-      color: var(--muted);
+    .scene-name {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
 
-    .tags {
+    .scene-mood {
+      margin: 0;
+      color: rgba(238, 245, 247, 0.82);
+      font-size: 15px;
+    }
+
+    .scene-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
+      justify-content: flex-end;
     }
 
-    .tag {
-      padding: 6px 10px;
+    .scene-badge {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(7, 16, 24, 0.74);
+      color: var(--text);
+      font-size: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .scene-content {
+      padding: 22px;
+    }
+
+    .scene-reason {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .scene-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .scene-tag {
+      padding: 7px 10px;
       border-radius: 999px;
-      background: var(--panel-2);
-      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-soft);
       font-size: 12px;
       border: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .summary {
-      margin: 14px 0 0;
-      padding: 14px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
+    .scene-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stack-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(9, 22, 33, 0.74);
+    }
+
+    .stack-card h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
     }
 
     .metric-list {
@@ -249,210 +531,512 @@
 
     .metric-row {
       display: grid;
-      grid-template-columns: 82px 1fr 48px;
+      grid-template-columns: 84px 1fr 42px;
       gap: 10px;
       align-items: center;
       font-size: 13px;
     }
 
+    .metric-row span:first-child {
+      color: var(--text-soft);
+    }
+
     .metric-track {
       height: 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
       overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .metric-fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
     }
 
-    .right-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .mini-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .match-list {
+    .chip-list {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .match-chip {
-      padding: 10px 12px;
-      border-radius: 14px;
+    .chip {
+      min-width: 112px;
+      padding: 12px;
+      border-radius: 16px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 13px;
     }
 
-    .score {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 12px 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      vertical-align: middle;
-    }
-
-    th {
-      color: var(--muted);
+    .chip-k {
+      color: var(--text-soft);
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 600;
     }
 
-    tbody tr:hover {
+    .chip-v {
+      margin-top: 6px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .recommend-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .track {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1.2fr) minmax(0, 0.7fr) 92px;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
       background: rgba(255, 255, 255, 0.03);
     }
 
     .rank {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(127, 230, 209, 0.12);
+      color: var(--accent);
       font-weight: 700;
-      background: rgba(124, 200, 255, 0.12);
-      color: var(--primary);
     }
 
-    .table-wrap {
-      overflow-x: auto;
+    .track-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .track-artist,
+    .track-meta {
+      margin-top: 4px;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .track-score {
+      color: var(--accent-2);
+      font-size: 18px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .track-score small {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-soft);
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .insight-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(9, 22, 33, 0.74);
+    }
+
+    .insight-card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .insight-card p,
+    .insight-card li {
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    .insight-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .visual-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .visual-frame img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .principle-grid,
+    .tech-grid,
+    .share-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .principle,
+    .tech-card,
+    .share-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .principle-kicker,
+    .tech-kicker,
+    .share-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .principle h3,
+    .tech-card h3,
+    .share-card h3 {
+      margin: 10px 0 0;
+      font-size: 18px;
+    }
+
+    .principle p,
+    .tech-card p,
+    .share-card p {
+      margin: 10px 0 0;
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .share-callout {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(127, 230, 209, 0.1), rgba(124, 182, 255, 0.08));
+      border: 1px solid var(--line-strong);
+      color: var(--text);
+      line-height: 1.75;
     }
 
     .empty {
-      padding: 24px 0;
-      color: var(--muted);
+      padding: 28px 0;
+      color: var(--text-soft);
       text-align: center;
     }
 
-    @media (max-width: 980px) {
-      .layout {
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .scene-layout,
+      .insight-grid,
+      .principle-grid,
+      .tech-grid,
+      .share-grid {
         grid-template-columns: 1fr;
       }
-      .cards-grid {
+
+      .section {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        padding: 12px;
+      }
+
+      .nav {
+        top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero-inner,
+      .section {
+        padding: 18px;
+      }
+
+      .hero-stat-grid {
         grid-template-columns: 1fr;
+      }
+
+      .track {
+        grid-template-columns: 48px 1fr;
+      }
+
+      .track > :nth-child(3),
+      .track > :nth-child(4) {
+        grid-column: 2;
+      }
+
+      .sample-card {
+        width: 100%;
+      }
+
+      .scene-media,
+      .scene-media img {
+        min-height: 260px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <section class="hero">
-      <div class="hero-top">
-        <div>
-          <h1 class="title">视界伴音</h1>
-          <p class="subtitle" id="subtitle">静态分享版音乐推荐可视化</p>
-        </div>
-        <div class="hero-badges">
-          <span class="badge" id="generatedAt">生成时间 -</span>
-          <span class="badge" id="songCount">歌曲数 -</span>
-          <span class="badge" id="topK">Top-K -</span>
-        </div>
+  <div class="shell">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-name">视界伴音</div>
+        <div class="brand-sub">Static Share Edition</div>
       </div>
-      <div class="notes" id="notes"></div>
-      <div class="toolbar">
-        <div>
-          <h2 class="section-title">场景切换</h2>
-          <div class="scene-buttons" id="sceneButtons"></div>
-        </div>
-        <div>
-          <h2 class="section-title">示例图片</h2>
-          <div class="sample-list" id="sampleList"></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#scene-demo">场景推荐</a>
+        <a class="nav-link" href="#product-design">产品设计</a>
+        <a class="nav-link" href="#tech-view">推荐技术</a>
+        <a class="nav-link" href="#share-guide">如何分享</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Static demo / no backend required</div>
+        <div class="hero-grid">
+          <div>
+            <h1>把“看见场景 -> 理解情境 -> 推荐音乐”打包成一个别人双击就能打开的分享站。</h1>
+            <p id="heroSubtitle">这个版本不依赖 Flask、不依赖 Python、也不追求上传图片功能；重点是让其他人稳定打开、点击切换场景，并理解项目的产品设计与技术实现。</p>
+            <div class="hero-badges" id="heroBadges"></div>
+            <div class="hero-actions">
+              <a class="hero-action primary" href="#scene-demo">开始体验场景切换</a>
+              <a class="hero-action secondary" href="#share-guide">查看分享方式</a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="hero-stat-grid">
+              <div class="hero-stat">
+                <div class="hero-stat-label">Share mode</div>
+                <div class="hero-stat-value">Static</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Scene prototypes</div>
+                <div class="hero-stat-value" id="sceneCount">-</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Songs covered</div>
+                <div class="hero-stat-value" id="songCount">-</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Top K</div>
+                <div class="hero-stat-value" id="topK">-</div>
+              </div>
+            </div>
+            <div class="hero-note" id="heroNotes"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="layout">
-      <div class="panel">
-        <div class="hero-scene">
-          <div class="hero-scene-icon" id="sceneIcon">-</div>
-          <div>
-            <h2 id="sceneLabel">请选择场景</h2>
-            <div class="muted" id="sceneDescription"></div>
-          </div>
+    <section class="section" id="scene-demo">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Scene demo</div>
+          <h2>静态版保留了真正值得点的主交互：切场景、看结果、理解推荐。</h2>
+          <p>这里不再模拟上传图片，而是直接让别人通过预设场景和示例图理解这套推荐系统是怎么工作的。</p>
         </div>
-        <div class="tags" id="sceneTags"></div>
-        <div class="summary" id="sceneReason"></div>
-        <div style="margin-top: 18px;">
-          <h3>场景属性</h3>
-          <div class="metric-list" id="attributeList"></div>
-        </div>
+        <div class="section-note">分享对象不需要安装任何环境。把整个 <code>share/</code> 文件夹发给对方，对方打开 <code>index.html</code> 就能体验下面这些内容。</div>
       </div>
 
-      <div class="right-stack">
-        <div class="cards-grid">
-          <div class="mini-card">
+      <div class="scene-toolbar">
+        <div class="scene-buttons" id="sceneButtons"></div>
+        <div class="sample-list" id="sampleList"></div>
+      </div>
+
+      <div class="scene-layout">
+        <div class="scene-main">
+          <div class="scene-media">
+            <img id="sceneHeroImage" alt="场景示意图">
+            <div class="scene-overlay">
+              <div class="scene-overlay-title">
+                <div class="scene-caption" id="sceneCaption">Preset scene</div>
+                <h3 class="scene-name" id="sceneName">-</h3>
+                <p class="scene-mood" id="sceneDescription">-</p>
+              </div>
+              <div class="scene-badges" id="sceneTopGenres"></div>
+            </div>
+          </div>
+
+          <div class="scene-content">
+            <p class="scene-reason" id="sceneReason"></p>
+            <div class="scene-tag-list" id="sceneTags"></div>
+
+            <div class="recommend-list" id="recommendList"></div>
+          </div>
+        </div>
+
+        <div class="scene-side">
+          <div class="stack-card">
+            <h3>场景属性</h3>
+            <div class="metric-list" id="attributeList"></div>
+          </div>
+
+          <div class="stack-card">
             <h3>音乐目标特征</h3>
-            <div class="metric-list" id="musicTargets"></div>
+            <div class="metric-list" id="musicTargetList"></div>
           </div>
-          <div class="mini-card">
-            <h3>流派先验</h3>
-            <div class="metric-list" id="genrePriors"></div>
-          </div>
-          <div class="mini-card">
-            <h3>关键属性摘要</h3>
-            <div class="match-list" id="attributeSummary"></div>
-          </div>
-          <div class="mini-card">
-            <h3>原型场景匹配</h3>
-            <div class="match-list" id="prototypeMatches"></div>
-          </div>
-        </div>
 
-        <div class="panel">
-          <h3>推荐结果</h3>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>歌曲</th>
-                  <th>歌手</th>
-                  <th>流派</th>
-                  <th>总分</th>
-                  <th>相似度</th>
-                  <th>能量</th>
-                  <th>原声</th>
-                </tr>
-              </thead>
-              <tbody id="recommendationTable"></tbody>
-            </table>
+          <div class="stack-card">
+            <h3>原型匹配与关键摘要</h3>
+            <div class="chip-list" id="prototypeMatchList"></div>
+            <div class="chip-list" id="attributeSummaryList" style="margin-top: 12px;"></div>
           </div>
         </div>
       </div>
+
+      <div class="insight-grid">
+        <div class="insight-card">
+          <h3>这个静态版解决了什么问题</h3>
+          <p>它把“别人打不开你本地 Flask 服务”的风险直接移除，转而交付一个任何电脑都能稳定打开的演示站。</p>
+        </div>
+        <div class="insight-card">
+          <h3>它还保留了什么价值</h3>
+          <p>预生成推荐结果、属性画像、音乐目标、原型匹配和推荐理由都保留了，所以项目的核心方法论仍然完整可讲。</p>
+        </div>
+        <div class="insight-card">
+          <h3>它主动放弃了什么</h3>
+          <p>实时上传图片推理。这个取舍是有意的，因为分享稳定性比现场模型演示更重要。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="product-design">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Product design</div>
+          <h2>项目不是只做算法验证，而是已经形成一条“用户如何进入 -> 系统如何建立信任”的产品路径。</h2>
+          <p>这部分对应当前项目里的 Product Design 页面，适合向别人讲清楚“为什么这个项目值得做”。</p>
+        </div>
+      </div>
+
+      <div class="visual-frame" id="productDesignFrame"></div>
+
+      <div class="principle-grid">
+        <div class="principle">
+          <div class="principle-kicker">01</div>
+          <h3>双入口，简单直接</h3>
+          <p>真实产品可以有“选场景”和“传图片”两种入口；静态分享版保留前者，让体验稳定可演示。</p>
+        </div>
+        <div class="principle">
+          <div class="principle-kicker">02</div>
+          <h3>结果先于解释</h3>
+          <p>用户先看到“当前场景适合什么音乐”，解释层再跟上，这比一开始堆技术说明更容易建立理解。</p>
+        </div>
+        <div class="principle">
+          <div class="principle-kicker">03</div>
+          <h3>从场景而不是标签出发</h3>
+          <p>项目试图降低用户组织歌单和标签的成本，让当前环境本身成为推荐输入。</p>
+        </div>
+        <div class="principle">
+          <div class="principle-kicker">04</div>
+          <h3>先做演示闭环</h3>
+          <p>当前阶段重点是把主路径讲清、跑通、分享出去，而不是把全部复杂功能一次性塞满。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tech-view">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Recommendation tech</div>
+          <h2>技术实现的核心，不是“图片分类”本身，而是把视觉场景稳定翻译成音乐选择。</h2>
+          <p>静态分享版把推荐技术页里最关键的架构图与解释保留下来，方便直接向别人讲系统主线。</p>
+        </div>
+      </div>
+
+      <div class="visual-frame" id="architectureFrame"></div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-kicker">Input</div>
+          <h3>多入口输入</h3>
+          <p>完整项目支持场景标签、图片输入和属性分数三种入口。静态分享版聚焦场景标签和预生成结果。</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-kicker">Mapping</div>
+          <h3>属性层中间表示</h3>
+          <p>相比固定场景标签，连续属性向量更适合解释推荐，也更适合未来扩展新场景。</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-kicker">Ranking</div>
+          <h3>多信号排序</h3>
+          <p>推荐结果综合了特征相似度、流派先验、热度和多样性，而不是只看单一命中规则。</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-kicker">Delivery</div>
+          <h3>分享与部署分层</h3>
+          <p>完整交互版依赖 Flask；静态分享版则把核心结果预先打包，换取“别人稳定打开”的确定性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="share-guide">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Share guide</div>
+          <h2>这版交付的目标不是替代完整网站，而是成为一个任何电脑都能打开的展示入口。</h2>
+          <p>如果你要发给老师、同学、评委或者非技术同事，这一版会比要求对方跑本地环境稳很多。</p>
+        </div>
+      </div>
+
+      <div class="share-grid">
+        <div class="share-card">
+          <div class="share-kicker">How</div>
+          <h3>如何发给别人</h3>
+          <p>把整个 <code>share/</code> 文件夹打包发过去，或者把它部署到 GitHub Pages、Netlify、Vercel 这类静态托管。</p>
+        </div>
+        <div class="share-card">
+          <div class="share-kicker">Open</div>
+          <h3>别人怎么打开</h3>
+          <p>最简单的方式就是双击 <code>share/index.html</code>。不需要 Python，不需要后端，不需要命令行。</p>
+        </div>
+        <div class="share-card">
+          <div class="share-kicker">Scope</div>
+          <h3>保留了哪些能力</h3>
+          <p>场景切换、示例图、推荐结果、属性画像、产品设计图和技术架构图都保留了，足够支持项目展示。</p>
+        </div>
+        <div class="share-card">
+          <div class="share-kicker">Limit</div>
+          <h3>明确放弃哪些能力</h3>
+          <p>不支持实时上传照片和在线推理。这是为了换取跨电脑分享时的稳定性和零环境依赖。</p>
+        </div>
+      </div>
+
+      <div class="share-callout" id="shareNotes"></div>
     </section>
   </div>
 
   <script src="./data/share-data.js"></script>
   <script>
     const data = window.SHARE_DATA;
+
     const ATTR_LABELS = {
       arousal: "唤醒度",
       socialness: "社交感",
@@ -460,21 +1044,22 @@
       relaxation: "放松感",
       nature: "自然感",
       urban: "都市感",
-      night: "夜晚感",
+      night: "夜间感",
       openness: "开阔度",
       warmth: "温暖感"
     };
+
     const MUSIC_LABELS = {
       energy: "能量",
       acousticness: "原声感",
-      valence: "情绪正向",
+      valence: "情绪亮度",
       danceability: "舞动感",
       instrumentalness: "器乐感",
       tempo_norm: "节奏强度"
     };
 
     if (!data || !Array.isArray(data.scenes) || data.scenes.length === 0) {
-      document.body.innerHTML = '<div class="page"><div class="panel"><h2>分享数据不存在</h2><p class="muted">请先运行 `python scripts/build_share_bundle.py` 生成分享数据。</p></div></div>';
+      document.body.innerHTML = '<div class="shell"><section class="section"><h2>分享数据不存在</h2><p style="color:#a9bdc9">请先运行 <code>python scripts/build_share_bundle.py</code> 生成静态分享数据。</p></section></div>';
       throw new Error("share data not found");
     }
 
@@ -486,25 +1071,54 @@
       return document.getElementById(id);
     }
 
-    function clampPercent(value) {
+    function percent(value) {
       return Math.max(0, Math.min(100, Number(value || 0) * 100));
+    }
+
+    function topEntries(record, limit = 3) {
+      return Object.entries(record || {})
+        .sort((left, right) => Number(right[1] || 0) - Number(left[1] || 0))
+        .slice(0, limit);
+    }
+
+    function currentScene() {
+      return data.scenes.find((scene) => scene.id === state.currentSceneId) || data.scenes[0];
+    }
+
+    function currentSample(sceneId) {
+      return (data.samples || []).find((sample) => sample.scene_id === sceneId);
     }
 
     function renderMeta() {
       const meta = data.meta || {};
-      byId("subtitle").textContent = meta.subtitle || "静态分享版音乐推荐可视化";
-      byId("generatedAt").textContent = "生成时间 " + (meta.generated_at || "-");
-      byId("songCount").textContent = "歌曲数 " + (meta.songs_count || "-");
-      byId("topK").textContent = "Top-K " + (meta.top_k || "-");
-      byId("notes").innerHTML = (meta.notes || []).map(note => `<div class="note">${note}</div>`).join("");
+      byId("sceneCount").textContent = String(data.scenes.length);
+      byId("songCount").textContent = String(meta.songs_count || "-");
+      byId("topK").textContent = String(meta.top_k || "-");
+
+      byId("heroBadges").innerHTML = [
+        `生成时间 ${meta.generated_at || "-"}`,
+        `场景原型 ${data.scenes.length}`,
+        `歌曲样本 ${meta.songs_count || "-"}`,
+        `Top-K ${meta.top_k || "-"}`
+      ].map((item) => `<span class="pill">${item}</span>`).join("");
+
+      byId("heroNotes").innerHTML = (meta.notes || []).map((note, index) => `
+        <div>
+          <div class="hero-note-title">分享说明 ${index + 1}</div>
+          <p>${note}</p>
+        </div>
+      `).join("");
+
+      byId("shareNotes").innerHTML = (meta.notes || []).join(" / ");
     }
 
     function renderSceneButtons() {
-      byId("sceneButtons").innerHTML = data.scenes.map(scene => {
+      byId("sceneButtons").innerHTML = data.scenes.map((scene) => {
         const active = scene.id === state.currentSceneId ? "active" : "";
         return `<button class="scene-btn ${active}" data-scene-id="${scene.id}">${scene.icon} ${scene.label}</button>`;
       }).join("");
-      document.querySelectorAll(".scene-btn").forEach(button => {
+
+      document.querySelectorAll(".scene-btn").forEach((button) => {
         button.addEventListener("click", () => {
           state.currentSceneId = button.dataset.sceneId;
           renderAll();
@@ -513,8 +1127,7 @@
     }
 
     function renderSamples() {
-      const samples = data.samples || [];
-      byId("sampleList").innerHTML = samples.map(sample => {
+      byId("sampleList").innerHTML = (data.samples || []).map((sample) => {
         const active = sample.scene_id === state.currentSceneId ? "active" : "";
         return `
           <div class="sample-card ${active}" data-scene-id="${sample.scene_id}">
@@ -526,7 +1139,8 @@
           </div>
         `;
       }).join("");
-      document.querySelectorAll(".sample-card").forEach(card => {
+
+      document.querySelectorAll(".sample-card").forEach((card) => {
         card.addEventListener("click", () => {
           state.currentSceneId = card.dataset.sceneId;
           renderAll();
@@ -534,78 +1148,95 @@
       });
     }
 
-    function currentScene() {
-      return data.scenes.find(scene => scene.id === state.currentSceneId) || data.scenes[0];
-    }
-
-    function renderMetricRows(targetId, entries, labels) {
+    function renderMetricList(targetId, entries, labels) {
       byId(targetId).innerHTML = entries.map(([key, value]) => `
         <div class="metric-row">
-          <div>${labels[key] || key}</div>
-          <div class="metric-track"><div class="metric-fill" style="width:${clampPercent(value)}%"></div></div>
-          <div>${Number(value || 0).toFixed(2)}</div>
+          <span>${labels[key] || key}</span>
+          <div class="metric-track">
+            <div class="metric-fill" style="width:${percent(value)}%"></div>
+          </div>
+          <span>${Number(value || 0).toFixed(2)}</span>
         </div>
       `).join("");
     }
 
-    function renderSceneDetail(scene) {
-      byId("sceneIcon").textContent = scene.icon || "♪";
-      byId("sceneLabel").textContent = scene.label;
+    function renderSceneDetail() {
+      const scene = currentScene();
+      const sample = currentSample(scene.id);
+      const heroImage = scene.hero_image || (sample && sample.image) || "";
+
+      byId("sceneHeroImage").src = heroImage ? `./${heroImage}` : "";
+      byId("sceneHeroImage").alt = scene.label;
+      byId("sceneCaption").textContent = `${scene.icon || "♪"} Scene preset`;
+      byId("sceneName").textContent = scene.label;
       byId("sceneDescription").textContent = scene.description || "";
-      byId("sceneTags").innerHTML = (scene.prototype_tags || []).map(tag => `<span class="tag">${tag}</span>`).join("");
       byId("sceneReason").textContent = scene.recommendation_reason || "该场景暂无推荐解释。";
 
-      renderMetricRows(
-        "attributeList",
-        Object.entries(scene.attribute_scores || {}),
-        ATTR_LABELS
-      );
+      byId("sceneTags").innerHTML = (scene.prototype_tags || []).map((tag) => `
+        <span class="scene-tag">${tag}</span>
+      `).join("");
 
-      renderMetricRows(
-        "musicTargets",
+      byId("sceneTopGenres").innerHTML = topEntries(scene.genre_priors, 3).map(([genre, score]) => `
+        <span class="scene-badge">${genre} ${(Number(score || 0) * 100).toFixed(0)}%</span>
+      `).join("");
+
+      renderMetricList("attributeList", Object.entries(scene.attribute_scores || {}), ATTR_LABELS);
+      renderMetricList(
+        "musicTargetList",
         Object.entries(scene.music_targets || {}).filter(([key]) => key !== "tempo"),
         MUSIC_LABELS
       );
 
-      renderMetricRows(
-        "genrePriors",
-        Object.entries(scene.genre_priors || {}),
-        {}
-      );
-
-      byId("attributeSummary").innerHTML = (scene.attribute_summary || []).map(item => `
-        <div class="match-chip">
-          <div>${ATTR_LABELS[item.attribute] || item.attribute}</div>
-          <div class="score">${Number(item.score || 0).toFixed(2)}</div>
+      byId("prototypeMatchList").innerHTML = (scene.prototype_matches || []).map((item) => `
+        <div class="chip">
+          <div class="chip-k">${item.scene}</div>
+          <div class="chip-v">${Number(item.similarity || 0).toFixed(3)}</div>
         </div>
       `).join("");
 
-      byId("prototypeMatches").innerHTML = (scene.prototype_matches || []).map(item => `
-        <div class="match-chip">
-          <div>${item.scene}</div>
-          <div class="score">${Number(item.similarity || 0).toFixed(3)}</div>
+      byId("attributeSummaryList").innerHTML = (scene.attribute_summary || []).map((item) => `
+        <div class="chip">
+          <div class="chip-k">${ATTR_LABELS[item.attribute] || item.attribute}</div>
+          <div class="chip-v">${Number(item.score || 0).toFixed(2)}</div>
         </div>
       `).join("");
 
       const recommendations = scene.recommendations || [];
-      byId("recommendationTable").innerHTML = recommendations.length ? recommendations.map(item => `
-        <tr>
-          <td><span class="rank">${item.rank || "-"}</span></td>
-          <td>${item.title || ""}</td>
-          <td class="muted">${item.artist || ""}</td>
-          <td>${item.genre || ""}</td>
-          <td class="score">${Number(item.final_score || 0).toFixed(3)}</td>
-          <td>${Number(item.feature_sim || 0).toFixed(3)}</td>
-          <td>${Number(item.energy || 0).toFixed(2)}</td>
-          <td>${Number(item.acousticness || 0).toFixed(2)}</td>
-        </tr>
-      `).join("") : '<tr><td colspan="8" class="empty">暂无推荐结果</td></tr>';
+      byId("recommendList").innerHTML = recommendations.length ? recommendations.map((item) => `
+        <div class="track">
+          <div><span class="rank">${item.rank || "-"}</span></div>
+          <div>
+            <div class="track-title">${item.title || ""}</div>
+            <div class="track-artist">${item.artist || ""}</div>
+          </div>
+          <div>
+            <div class="track-title">${item.genre || ""}</div>
+            <div class="track-meta">feature sim ${Number(item.feature_sim || 0).toFixed(3)} / acoustic ${Number(item.acousticness || 0).toFixed(2)}</div>
+          </div>
+          <div class="track-score">
+            ${Number(item.final_score || 0).toFixed(3)}
+            <small>final score</small>
+          </div>
+        </div>
+      `).join("") : '<div class="empty">暂无推荐结果</div>';
+    }
+
+    function renderVisuals() {
+      const assets = data.assets || {};
+      byId("productDesignFrame").innerHTML = assets.product_design_image
+        ? `<img src="./${assets.product_design_image}" alt="产品需求设计图">`
+        : '<div class="empty">缺少产品设计图资源</div>';
+
+      byId("architectureFrame").innerHTML = assets.architecture_image
+        ? `<img src="./${assets.architecture_image}" alt="推荐技术架构图">`
+        : '<div class="empty">缺少技术架构图资源</div>';
     }
 
     function renderAll() {
       renderSceneButtons();
       renderSamples();
-      renderSceneDetail(currentScene());
+      renderSceneDetail();
+      renderVisuals();
     }
 
     renderMeta();

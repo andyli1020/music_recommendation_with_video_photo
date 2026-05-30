@@ -1,0 +1,4302 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "c43db1437d955d9923da33d5fefaaf2c9ac3be79",
+  "generatedAt": "2026-05-24T06:35:45.163Z",
+  "files": {
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "16d879e8c750e7c29071f0b216e451d0514dce7afe8a9e02a11286789cdf692d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 293,
+      "hasStructuralAnalysis": true
+    },
+    "configs/scene_attributes.json": {
+      "filePath": "configs/scene_attributes.json",
+      "contentHash": "4114e86dee920e21883f93649755f756bbabd4ef848b152a3f2f0e9e1b6a591d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 353,
+      "hasStructuralAnalysis": true
+    },
+    "configs/scene_profiles.json": {
+      "filePath": "configs/scene_profiles.json",
+      "contentHash": "a25b5287e0a08fb4771202cc325c0c9e6d26d062784c6b08d51ec573f7f7de7f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 123,
+      "hasStructuralAnalysis": true
+    },
+    "data/sample_spotify/readme.md": {
+      "filePath": "data/sample_spotify/readme.md",
+      "contentHash": "e1b0d96283a224dd87c636f6b83304f7d645b9de2c506b9143ce905334a1eafa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "data/sample_spotify/spotify_songs.csv": {
+      "filePath": "data/sample_spotify/spotify_songs.csv",
+      "contentHash": "e4e5d4c733585c91a5deb5ddb439ac1337a14955e2114941e1f27ec23345f0d4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32835,
+      "hasStructuralAnalysis": false
+    },
+    "data/test_images_real/download_manifest.json": {
+      "filePath": "data/test_images_real/download_manifest.json",
+      "contentHash": "d310c3f969fac70e19aff83cac89dd95e941beea7ff20b8d62aa12b4a00fb186",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 170,
+      "hasStructuralAnalysis": true
+    },
+    "doc/ai_context_summary.md": {
+      "filePath": "doc/ai_context_summary.md",
+      "contentHash": "aaf5b63b4d5d9ab43290a6583d1cfbe4b603880aada20a85c8ab312c24316710",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 349,
+      "hasStructuralAnalysis": true
+    },
+    "doc/cf_datasets_evaluation.md": {
+      "filePath": "doc/cf_datasets_evaluation.md",
+      "contentHash": "485beac204b24cb025cc3cbbcf6b98c4a149264fe53b753fc88ca5d2a98e9f95",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "doc/current_architecture_diagram.md": {
+      "filePath": "doc/current_architecture_diagram.md",
+      "contentHash": "1d9016f28e16e2a27fe3361c2b9ab6e0b6245463924d7055155c0101ade3d304",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 162,
+      "hasStructuralAnalysis": true
+    },
+    "doc/current_progress.md": {
+      "filePath": "doc/current_progress.md",
+      "contentHash": "73aa8826a0624869bc47b8260604dd542fcab19ca2590a3336416f1f98cd8abe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 349,
+      "hasStructuralAnalysis": true
+    },
+    "doc/detailed_proposal.md": {
+      "filePath": "doc/detailed_proposal.md",
+      "contentHash": "22136b571f85d4feedfb0fcdec610e7dd1a9a1dfab749b3ecb56d759cd1484c1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 865,
+      "hasStructuralAnalysis": true
+    },
+    "doc/next_step_plan.md": {
+      "filePath": "doc/next_step_plan.md",
+      "contentHash": "acea3959745a5fa83e4720a84e97e43c05d0e4da0690c15468edc749c179ff77",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 226,
+      "hasStructuralAnalysis": true
+    },
+    "doc/next_step_plan_5members.md": {
+      "filePath": "doc/next_step_plan_5members.md",
+      "contentHash": "6480fc43b185fa3053ac3f27969ae6c09a876c210a4e2c2d9345fd29f1864df9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 295,
+      "hasStructuralAnalysis": true
+    },
+    "doc/proposal.md": {
+      "filePath": "doc/proposal.md",
+      "contentHash": "dbeb0e81a8e0ca816b4aec0f42c67f9bd38123cc18b89da51c5d781973531405",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "doc/recommend_system.md": {
+      "filePath": "doc/recommend_system.md",
+      "contentHash": "05c032bf3a14fc050a4cd1fc386784472b5259b10ecdee591cfdb8656a3bd229",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 278,
+      "hasStructuralAnalysis": true
+    },
+    "doc/structrue.mmd": {
+      "filePath": "doc/structrue.mmd",
+      "contentHash": "bd0b4cb7f2783aabd7a244706bc3a7d19dc5e19180c456e57806b6e7ebd1cfe4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": false
+    },
+    "doc/structure.md": {
+      "filePath": "doc/structure.md",
+      "contentHash": "64ed619ff4435d0c282d702b92539459201216e50b504b3774333dfa165558c1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 370,
+      "hasStructuralAnalysis": true
+    },
+    "doc/structure_picture.md": {
+      "filePath": "doc/structure_picture.md",
+      "contentHash": "40d38735786595e0f640c3c890d2c36632df254acb42e28911ec268d65d7d3ab",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 129,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/README.md": {
+      "filePath": "frontend/README.md",
+      "contentHash": "8dc9e0ee2281acb3324624fbe6eb7e1377cc626f616ea4dc90e3a90ae094374d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/components.json": {
+      "filePath": "frontend/components.json",
+      "contentHash": "893076b96b1838a295c646f229d012de1cbeec622dde092f9cd58ec92f939235",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/eslint.config.js": {
+      "filePath": "frontend/eslint.config.js",
+      "contentHash": "cf80a7510234dcd5ae594b30b44682b8b45ba13c0fcb5bf8928bea143802aa1c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@eslint/js",
+          "specifiers": [
+            "js"
+          ]
+        },
+        {
+          "source": "globals",
+          "specifiers": [
+            "globals"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-hooks",
+          "specifiers": [
+            "reactHooks"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-refresh",
+          "specifiers": [
+            "reactRefresh"
+          ]
+        },
+        {
+          "source": "typescript-eslint",
+          "specifiers": [
+            "tseslint"
+          ]
+        },
+        {
+          "source": "eslint/config",
+          "specifiers": [
+            "defineConfig",
+            "globalIgnores"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/index.html": {
+      "filePath": "frontend/index.html",
+      "contentHash": "679267bacc17b49ec7c22aa84265541bbb494209d7e2e6bf7fb0a8c47cdd0751",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "frontend/package.json": {
+      "filePath": "frontend/package.json",
+      "contentHash": "cd04e73ba14ed1e0c5823b1e3b38246adfe2ecfae0406aabe1eb0310ba4af5d3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/App.css": {
+      "filePath": "frontend/src/App.css",
+      "contentHash": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 185,
+      "hasStructuralAnalysis": false
+    },
+    "frontend/src/App.tsx": {
+      "filePath": "frontend/src/App.tsx",
+      "contentHash": "b562a62ee17a4640be11f09170820429a3ccfb03d2814ba2fe62357a9945c6b9",
+      "functions": [
+        {
+          "name": "hexToRgba",
+          "params": [
+            "hex",
+            "alpha"
+          ],
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "App",
+          "params": [],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "RecommendationApp",
+          "params": [],
+          "exported": false,
+          "lineCount": 1154
+        },
+        {
+          "name": "ProductDesignPage",
+          "params": [],
+          "exported": false,
+          "lineCount": 174
+        },
+        {
+          "name": "TechnologyPage",
+          "params": [],
+          "exported": false,
+          "lineCount": 222
+        },
+        {
+          "name": "TechHeroStat",
+          "params": [
+            "{ label, value }"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "ProductPillarCard",
+          "params": [
+            "{ pillar }"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "RequirementStageCard",
+          "params": [
+            "{ stage }"
+          ],
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "ProductGuideline",
+          "params": [
+            "{ body, title }"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "ScopeCard",
+          "params": [
+            "{ column }"
+          ],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "MetricCard",
+          "params": [
+            "{ metric }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "ProductRequirementTabs",
+          "params": [],
+          "exported": false,
+          "lineCount": 80
+        },
+        {
+          "name": "ArchitectureTabs",
+          "params": [],
+          "exported": false,
+          "lineCount": 33
+        },
+        {
+          "name": "ArchitectureDiagram",
+          "params": [],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "ArchitectureLayerGroup",
+          "params": [
+            "{\n  index,\n  layer,\n}"
+          ],
+          "exported": false,
+          "lineCount": 34
+        },
+        {
+          "name": "ArchitectureNode",
+          "params": [
+            "{\n  node,\n}"
+          ],
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "ArchitectureArrow",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "ArchitectureDependency",
+          "params": [
+            "{\n  body,\n  icon: Icon,\n  label,\n  title,\n}"
+          ],
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "TechFlowCard",
+          "params": [
+            "{ index, step }"
+          ],
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "TechLayer",
+          "params": [
+            "{\n  body,\n  icon: Icon,\n  title,\n}"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "TechScoreCard",
+          "params": [
+            "{ signal }"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "MiniMetric",
+          "params": [
+            "{\n  label,\n  suffix,\n  value,\n}"
+          ],
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "SummaryMetric",
+          "params": [
+            "{\n  label,\n  suffix,\n  value,\n}"
+          ],
+          "exported": false,
+          "lineCount": 19
+        },
+        {
+          "name": "MetricBar",
+          "params": [
+            "{\n  compact = false,\n  hint,\n  label,\n  tone = \"green\",\n  value,\n}"
+          ],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "TrackQueueItem",
+          "params": [
+            "{ track }"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "TrackListRow",
+          "params": [
+            "{ track }"
+          ],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "SideNote",
+          "params": [
+            "{ body, title }"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "AlertCard",
+          "params": [
+            "{ message }"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "LoadingGrid",
+          "params": [],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "LoadingCard",
+          "params": [
+            "{ className }"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "buildRadarOption",
+          "params": [
+            "scores",
+            "accent",
+            "accentAlt"
+          ],
+          "returnType": "EChartsOption",
+          "exported": false,
+          "lineCount": 66
+        },
+        {
+          "name": "buildGenreOption",
+          "params": [
+            "priors",
+            "accent",
+            "accentAlt"
+          ],
+          "returnType": "EChartsOption",
+          "exported": false,
+          "lineCount": 74
+        },
+        {
+          "name": "getTopGenres",
+          "params": [
+            "priors"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "mergeImageResponse",
+          "params": [
+            "sceneResponse",
+            "imageResponse"
+          ],
+          "returnType": "SceneRecommendationResponse",
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "getConfidenceLabel",
+          "params": [
+            "confidence"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "getModelDisplayName",
+          "params": [
+            "model"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "buildAttributeSummary",
+          "params": [
+            "attribute"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "buildGenreSummary",
+          "params": [
+            "topGenres"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "formatPercent",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getErrorMessage",
+          "params": [
+            "error"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "CSSProperties",
+            "startTransition",
+            "useDeferredValue",
+            "useEffect",
+            "useEffectEvent",
+            "useRef",
+            "useState",
+            "ChangeEvent",
+            "ComponentType",
+            "DragEvent"
+          ]
+        },
+        {
+          "source": "echarts",
+          "specifiers": [
+            "EChartsOption"
+          ]
+        },
+        {
+          "source": "gsap",
+          "specifiers": [
+            "gsap"
+          ]
+        },
+        {
+          "source": "echarts-for-react",
+          "specifiers": [
+            "ReactECharts"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowLeft",
+            "ArrowRight",
+            "CheckCheck",
+            "BarChart3",
+            "BrainCircuit",
+            "Camera",
+            "CircleAlert",
+            "Coffee",
+            "Database",
+            "Disc3",
+            "Dumbbell",
+            "Gauge",
+            "ImageUp",
+            "Layers3",
+            "LibraryBig",
+            "ListMusic",
+            "LoaderCircle",
+            "Mountain",
+            "MoonStar",
+            "Music2",
+            "Network",
+            "Orbit",
+            "RadioTower",
+            "ShieldCheck",
+            "SlidersHorizontal",
+            "Sparkles",
+            "Target",
+            "Users",
+            "Wand2"
+          ]
+        },
+        {
+          "source": "@/lib/api",
+          "specifiers": [
+            "fetchSceneRecommendation",
+            "fetchScenes",
+            "inferSceneFromImage"
+          ]
+        },
+        {
+          "source": "@/lib/types",
+          "specifiers": [
+            "AttributeSummaryItem",
+            "ImageRecommendationResponse",
+            "NumericRecord",
+            "Recommendation",
+            "SceneKey",
+            "SceneRecommendationResponse",
+            "SceneSummary"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/badge",
+          "specifiers": [
+            "Badge"
+          ]
+        },
+        {
+          "source": "@/components/ui/blur-fade",
+          "specifiers": [
+            "BlurFade"
+          ]
+        },
+        {
+          "source": "@/components/ui/border-beam",
+          "specifiers": [
+            "BorderBeam"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardDescription",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/grid-pattern",
+          "specifiers": [
+            "GridPattern"
+          ]
+        },
+        {
+          "source": "@/components/ui/number-ticker",
+          "specifiers": [
+            "NumberTicker"
+          ]
+        },
+        {
+          "source": "@/components/ui/separator",
+          "specifiers": [
+            "Separator"
+          ]
+        },
+        {
+          "source": "@/components/ui/tabs",
+          "specifiers": [
+            "Tabs",
+            "TabsContent",
+            "TabsList",
+            "TabsTrigger"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 2889,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/animated-shiny-text.tsx": {
+      "filePath": "frontend/src/components/ui/animated-shiny-text.tsx",
+      "contentHash": "3743a0a0b4894840a96bacd839e493872bac484a940684f91fd23a1784c00fbb",
+      "functions": [
+        {
+          "name": "AnimatedShinyText",
+          "params": [
+            "{\n  children,\n  className,\n  shimmerWidth = 100,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ComponentPropsWithoutRef",
+            "CSSProperties",
+            "FC"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "AnimatedShinyText"
+      ],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/badge.tsx": {
+      "filePath": "frontend/src/components/ui/badge.tsx",
+      "contentHash": "968b0403af74a785c9408ca69a677235e49d0c80b2c27fb9858ad421a8778c7d",
+      "functions": [
+        {
+          "name": "Badge",
+          "params": [
+            "{\n  className,\n  variant = \"default\",\n  render,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@base-ui/react/merge-props",
+          "specifiers": [
+            "mergeProps"
+          ]
+        },
+        {
+          "source": "@base-ui/react/use-render",
+          "specifiers": [
+            "useRender"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Badge",
+        "badgeVariants"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/blur-fade.tsx": {
+      "filePath": "frontend/src/components/ui/blur-fade.tsx",
+      "contentHash": "5908d444690969d1ede5991497006cfc97b92510b5f9049c7769bc5272f6ac85",
+      "functions": [
+        {
+          "name": "getFilter",
+          "params": [
+            "v"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "BlurFade",
+          "params": [
+            "{\n  children,\n  className,\n  variant,\n  duration = 0.4,\n  delay = 0,\n  offset = 6,\n  direction = \"down\",\n  inView = false,\n  inViewMargin = \"-50px\",\n  blur = \"6px\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 61
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useRef"
+          ]
+        },
+        {
+          "source": "motion/react",
+          "specifiers": [
+            "AnimatePresence",
+            "motion",
+            "useInView",
+            "MotionProps",
+            "UseInViewOptions",
+            "Variants"
+          ]
+        }
+      ],
+      "exports": [
+        "BlurFade"
+      ],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/border-beam.tsx": {
+      "filePath": "frontend/src/components/ui/border-beam.tsx",
+      "contentHash": "9554ae04aa1509ec52833182afe06b581bc56a35cad31393b3240ea2b874a106",
+      "functions": [
+        {
+          "name": "BorderBeam",
+          "params": [
+            "{\n  className,\n  size = 50,\n  delay = 0,\n  duration = 6,\n  colorFrom = \"#ffaa40\",\n  colorTo = \"#9c40ff\",\n  transition,\n  style,\n  reverse = false,\n  initialOffset = 0,\n  borderWidth = 1,\n}"
+          ],
+          "exported": true,
+          "lineCount": 54
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "motion/react",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "motion/react",
+          "specifiers": [
+            "MotionStyle",
+            "Transition"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "BorderBeam"
+      ],
+      "totalLines": 109,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/button.tsx": {
+      "filePath": "frontend/src/components/ui/button.tsx",
+      "contentHash": "f3aef38b4236eba6dc8305c57a73deef526acc480e86b502ef702a4a3faea496",
+      "functions": [
+        {
+          "name": "Button",
+          "params": [
+            "{\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@base-ui/react/button",
+          "specifiers": [
+            "ButtonPrimitive"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Button",
+        "buttonVariants"
+      ],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/card.tsx": {
+      "filePath": "frontend/src/components/ui/card.tsx",
+      "contentHash": "a41b4d3d618416128d0093af2575048a2de8ef25c0926bcea4f19a24a59de476",
+      "functions": [
+        {
+          "name": "Card",
+          "params": [
+            "{\n  className,\n  size = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "CardHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardTitle",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardDescription",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "CardAction",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "CardContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "CardFooter",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardFooter",
+        "CardTitle",
+        "CardAction",
+        "CardDescription",
+        "CardContent"
+      ],
+      "totalLines": 104,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/grid-pattern.tsx": {
+      "filePath": "frontend/src/components/ui/grid-pattern.tsx",
+      "contentHash": "1d1caaf01de0a1ebfdffea1163535f8fbfdfbee33cd0a640e09388815d1823df",
+      "functions": [
+        {
+          "name": "GridPattern",
+          "params": [
+            "{\n  width = 40,\n  height = 40,\n  x = -1,\n  y = -1,\n  strokeDasharray = \"0\",\n  squares,\n  className,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 55
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useId"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "GridPattern"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/number-ticker.tsx": {
+      "filePath": "frontend/src/components/ui/number-ticker.tsx",
+      "contentHash": "9df35f6e9b9be14ca3850ea740273f1fb3976238eba9964166d84e828092c08f",
+      "functions": [
+        {
+          "name": "NumberTicker",
+          "params": [
+            "{\n  value,\n  startValue = 0,\n  direction = \"up\",\n  delay = 0,\n  className,\n  decimalPlaces = 0,\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 59
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "ComponentPropsWithoutRef"
+          ]
+        },
+        {
+          "source": "motion/react",
+          "specifiers": [
+            "useInView",
+            "useMotionValue",
+            "useSpring"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "NumberTicker"
+      ],
+      "totalLines": 73,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/separator.tsx": {
+      "filePath": "frontend/src/components/ui/separator.tsx",
+      "contentHash": "75085bd84ff6965e4a356c53a4689799cabf65caa93c0bba064d5a0c6fa78f13",
+      "functions": [
+        {
+          "name": "Separator",
+          "params": [
+            "{\n  className,\n  orientation = \"horizontal\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@base-ui/react/separator",
+          "specifiers": [
+            "SeparatorPrimitive"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Separator"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/components/ui/tabs.tsx": {
+      "filePath": "frontend/src/components/ui/tabs.tsx",
+      "contentHash": "84c1ebcee9c620b4b9543b1fe097307051a68ee7bd2901241a962360337f1191",
+      "functions": [
+        {
+          "name": "Tabs",
+          "params": [
+            "{\n  className,\n  orientation = \"horizontal\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "TabsList",
+          "params": [
+            "{\n  className,\n  variant = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "TabsTrigger",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "TabsContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@base-ui/react/tabs",
+          "specifiers": [
+            "TabsPrimitive"
+          ]
+        },
+        {
+          "source": "class-variance-authority",
+          "specifiers": [
+            "cva",
+            "VariantProps"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent",
+        "tabsListVariants"
+      ],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/index.css": {
+      "filePath": "frontend/src/index.css",
+      "contentHash": "444898ab9a38f84376a16d53ccafb46e2c7d3c1eda19e72d760f54ac1f357097",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 131,
+      "hasStructuralAnalysis": false
+    },
+    "frontend/src/lib/api.ts": {
+      "filePath": "frontend/src/lib/api.ts",
+      "contentHash": "c8ee28c358a4169da56672ca831f3b4f253990a3ee8f14a883ece18c497340ff",
+      "functions": [
+        {
+          "name": "readJson",
+          "params": [
+            "input",
+            "init"
+          ],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "fetchScenes",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "fetchSceneRecommendation",
+          "params": [
+            "scene",
+            "topK"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "inferSceneFromImage",
+          "params": [
+            "file",
+            "topK"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/types",
+          "specifiers": [
+            "ImageRecommendationResponse",
+            "SceneKey",
+            "SceneRecommendationResponse",
+            "ScenesResponse"
+          ]
+        }
+      ],
+      "exports": [
+        "fetchScenes",
+        "fetchSceneRecommendation",
+        "inferSceneFromImage"
+      ],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/lib/types.ts": {
+      "filePath": "frontend/src/lib/types.ts",
+      "contentHash": "25aff8cde29e5fe6970016ef62134e4ee1f85f4c2f56814c63ea5b9f53044a4c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 80,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/lib/utils.ts": {
+      "filePath": "frontend/src/lib/utils.ts",
+      "contentHash": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d",
+      "functions": [
+        {
+          "name": "cn",
+          "params": [
+            "...inputs"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "clsx",
+          "specifiers": [
+            "clsx",
+            "ClassValue"
+          ]
+        },
+        {
+          "source": "tailwind-merge",
+          "specifiers": [
+            "twMerge"
+          ]
+        }
+      ],
+      "exports": [
+        "cn"
+      ],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/src/main.tsx": {
+      "filePath": "frontend/src/main.tsx",
+      "contentHash": "6e9e5807fcbd48b75a96db5cbef36c996262196be42e6d4760dc86babbe61ad2",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "StrictMode"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "./index.css",
+          "specifiers": []
+        },
+        {
+          "source": "./App.tsx",
+          "specifiers": [
+            "App"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/tsconfig.app.json": {
+      "filePath": "frontend/tsconfig.app.json",
+      "contentHash": "ed07a19a14bb7ee96cb11fc668c2741a282365dd2fe4f3859088197a3dbcaf25",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/tsconfig.json": {
+      "filePath": "frontend/tsconfig.json",
+      "contentHash": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/tsconfig.node.json": {
+      "filePath": "frontend/tsconfig.node.json",
+      "contentHash": "90a22c920cbc14624fb4658b58f15c875abf3234224f3933f211849c3ada3242",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "frontend/vite.config.ts": {
+      "filePath": "frontend/vite.config.ts",
+      "contentHash": "ecd6fb478e43c22d4585ba300b70cf6832edbee264e25f558724a25a19f9bbd9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "@tailwindcss/vite",
+          "specifiers": [
+            "tailwindcss"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "outputs/agent-demo-gif/frame-manifest.json": {
+      "filePath": "outputs/agent-demo-gif/frame-manifest.json",
+      "contentHash": "57989a5ca04d9a239bb9ea68d0ddadaf2fb87da78adb8827ceb0f55aee0e8a17",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "reports/clip_stability_test.csv": {
+      "filePath": "reports/clip_stability_test.csv",
+      "contentHash": "4989a54ff96e60a4e9826d35e888f0249ffcd06846f9ed8eca8be54bb7708de5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "reports/clip_stability_test.json": {
+      "filePath": "reports/clip_stability_test.json",
+      "contentHash": "1e33c07a7ae99d51bc35741eff15cb531848319c30100455403454789c0b645d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 147,
+      "hasStructuralAnalysis": true
+    },
+    "reports/mock_stability_test.csv": {
+      "filePath": "reports/mock_stability_test.csv",
+      "contentHash": "48550c1ab45ac5336057b7ee0b50d65be9fd73632b21d74a7fe4460d85898417",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "reports/mock_stability_test.json": {
+      "filePath": "reports/mock_stability_test.json",
+      "contentHash": "16de580862b033582c5aadfc3df798ba2b4def3aed352d8cfd995b80d6307c62",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 147,
+      "hasStructuralAnalysis": true
+    },
+    "reports/scene_overlap_comparison.csv": {
+      "filePath": "reports/scene_overlap_comparison.csv",
+      "contentHash": "bef9c11647fca8a270f7257a5b3636a7868f9ef06cc9e1252794de439ff1e97a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "reports/scene_overlap_comparison.json": {
+      "filePath": "reports/scene_overlap_comparison.json",
+      "contentHash": "7eee9371d3ae027ce9217bb5e85597d7b1668062c707a6d4122595a9b9e281f5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 809,
+      "hasStructuralAnalysis": true
+    },
+    "requirements.txt": {
+      "filePath": "requirements.txt",
+      "contentHash": "ad6545eaeb01fcf7b196353d4e7e6fd1537f3c018ddf8912f85ec835e03496d4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/batch_clip_stability_test.py": {
+      "filePath": "scripts/batch_clip_stability_test.py",
+      "contentHash": "2e862e7be2a71c059af9613895d81f6ab5a1d5081ec6197b8ad3de0b5f3f9ceb",
+      "functions": [
+        {
+          "name": "parse_args",
+          "params": [],
+          "returnType": "argparse.Namespace",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "find_images",
+          "params": [
+            "image_root"
+          ],
+          "returnType": "list[Path]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "build_summary",
+          "params": [
+            "results",
+            "classifier",
+            "image_root"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "write_json",
+          "params": [
+            "output_path",
+            "payload"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "write_csv",
+          "params": [
+            "output_path",
+            "results"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "save_reports",
+          "params": [
+            "output_dir",
+            "classifier",
+            "summary",
+            "results"
+          ],
+          "returnType": "tuple[Path, Path]",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 82
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "csv",
+          "specifiers": [
+            "csv"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "traceback",
+          "specifiers": [
+            "traceback"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "parse_args",
+        "find_images",
+        "build_summary",
+        "write_json",
+        "write_csv",
+        "save_reports",
+        "main"
+      ],
+      "totalLines": 202,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/build_demo_gif.py": {
+      "filePath": "scripts/build_demo_gif.py",
+      "contentHash": "5fd053c86dbe62d0326df4dbad6c96b03b36e1b45d70f69de33fde4d0f3d4769",
+      "functions": [
+        {
+          "name": "fit_frame",
+          "params": [
+            "image"
+          ],
+          "returnType": "Image.Image",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "to_palette",
+          "params": [
+            "image"
+          ],
+          "returnType": "Image.Image",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "build_gif",
+          "params": [],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        }
+      ],
+      "exports": [
+        "fit_frame",
+        "to_palette",
+        "build_gif"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/build_share_bundle.py": {
+      "filePath": "scripts/build_share_bundle.py",
+      "contentHash": "9bd946db666b8ce7091445475a69fe833e3ccfdfe7c0173e3efca456dfd57218",
+      "functions": [
+        {
+          "name": "_ensure_share_dirs",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_clear_directory",
+          "params": [
+            "directory"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "_normalize_value",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_serialize_recommendations",
+          "params": [
+            "df"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "_build_scene_payload",
+          "params": [
+            "scene_name",
+            "songs_df",
+            "top_k"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "_copy_scene_image",
+          "params": [
+            "scene_name"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_copy_diagram",
+          "params": [
+            "source",
+            "target_name"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_build_samples",
+          "params": [
+            "scene_payloads"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "build_share_bundle",
+          "params": [
+            "top_k"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 40
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "shutil",
+          "specifiers": [
+            "shutil"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timezone"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "DEFAULT_TOP_K",
+            "PROCESSED_SONGS_CSV"
+          ]
+        },
+        {
+          "source": "attribute_mapper",
+          "specifiers": [
+            "get_scene_prototype",
+            "list_scene_prototypes"
+          ]
+        },
+        {
+          "source": "recommender",
+          "specifiers": [
+            "recommend_by_attribute_scores"
+          ]
+        }
+      ],
+      "exports": [
+        "_ensure_share_dirs",
+        "_clear_directory",
+        "_normalize_value",
+        "_serialize_recommendations",
+        "_build_scene_payload",
+        "_copy_scene_image",
+        "_copy_diagram",
+        "_build_samples",
+        "build_share_bundle"
+      ],
+      "totalLines": 213,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/capture_demo_frames.mjs": {
+      "filePath": "scripts/capture_demo_frames.mjs",
+      "contentHash": "c9e5ee43ec8dafca010646f21bb4d32d6f74f72cc22965b4feac9012aa2c1e85",
+      "functions": [
+        {
+          "name": "ensureOutputDirs",
+          "params": [],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "clearOldFrames",
+          "params": [],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "waitForAppReady",
+          "params": [
+            "page"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "clickScene",
+          "params": [
+            "page",
+            "sceneLabel"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "captureFrame",
+          "params": [
+            "page",
+            "name",
+            "durationMs"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": false,
+          "lineCount": 64
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "fs"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath",
+            "pathToFileURL"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 135,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/download_sample_images.py": {
+      "filePath": "scripts/download_sample_images.py",
+      "contentHash": "4d9b1ec2c11dda5798d5982c8a34891fcfa752c81b93a8bdaf707bbaeebc6e82",
+      "functions": [
+        {
+          "name": "parse_args",
+          "params": [],
+          "returnType": "argparse.Namespace",
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "build_session",
+          "params": [],
+          "returnType": "requests.Session",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "sanitize_filename",
+          "params": [
+            "name"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "strip_title_prefix",
+          "params": [
+            "title"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "strip_known_suffix",
+          "params": [
+            "name"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "clean_html_text",
+          "params": [
+            "value"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "choose_image_url",
+          "params": [
+            "imageinfo"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "extract_license",
+          "params": [
+            "imageinfo"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "search_commons",
+          "params": [
+            "session",
+            "query",
+            "limit",
+            "thumb_width"
+          ],
+          "returnType": "Iterable[dict]",
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "download_file",
+          "params": [
+            "session",
+            "url",
+            "output_path"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "make_manifest_record",
+          "params": [
+            "scene",
+            "item",
+            "image_url",
+            "local_path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "download_scene_images",
+          "params": [
+            "session",
+            "scene",
+            "queries",
+            "per_scene",
+            "output_dir",
+            "max_results_per_query",
+            "thumb_width",
+            "sleep_seconds"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 67
+        },
+        {
+          "name": "save_manifest",
+          "params": [
+            "output_dir",
+            "records"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "html",
+          "specifiers": [
+            "html"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Dict",
+            "Iterable",
+            "List"
+          ]
+        },
+        {
+          "source": "urllib.parse",
+          "specifiers": [
+            "unquote",
+            "urlparse"
+          ]
+        },
+        {
+          "source": "requests",
+          "specifiers": [
+            "requests"
+          ]
+        }
+      ],
+      "exports": [
+        "parse_args",
+        "build_session",
+        "sanitize_filename",
+        "strip_title_prefix",
+        "strip_known_suffix",
+        "clean_html_text",
+        "choose_image_url",
+        "extract_license",
+        "search_commons",
+        "download_file",
+        "make_manifest_record",
+        "download_scene_images",
+        "save_manifest",
+        "main"
+      ],
+      "totalLines": 306,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/launch_dynamic_web.py": {
+      "filePath": "scripts/launch_dynamic_web.py",
+      "contentHash": "a6bff36188d8285df9d8e0f48ef48e0be3089ee5d3c402ff9fa79b309d961f3d",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "runpy",
+          "specifiers": [
+            "runpy"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "traceback",
+          "specifiers": [
+            "traceback"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "main"
+      ],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/manage_dynamic_web.py": {
+      "filePath": "scripts/manage_dynamic_web.py",
+      "contentHash": "1ad3f55614413014be55b0ed64d93b0afc14ac51c1252bd97cf811eb063bb1f2",
+      "functions": [
+        {
+          "name": "run_command",
+          "params": [
+            "args",
+            "check"
+          ],
+          "returnType": "subprocess.CompletedProcess[str]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "read_pid",
+          "params": [],
+          "returnType": "int | None",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "is_pid_running",
+          "params": [
+            "pid"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "find_listener_pid",
+          "params": [
+            "port"
+          ],
+          "returnType": "int | None",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "is_healthy",
+          "params": [
+            "timeout"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "cleanup_stale_state",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "resolve_running_pid",
+          "params": [],
+          "returnType": "int | None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "clear_logs",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "ensure_task",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "run_task",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "wait_until_started",
+          "params": [
+            "timeout_seconds"
+          ],
+          "returnType": "int | None",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "start",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "stop",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "status",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "urllib.error",
+          "specifiers": [
+            "urllib.error"
+          ]
+        },
+        {
+          "source": "urllib.request",
+          "specifiers": [
+            "urllib.request"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "run_command",
+        "read_pid",
+        "is_pid_running",
+        "find_listener_pid",
+        "is_healthy",
+        "cleanup_stale_state",
+        "resolve_running_pid",
+        "clear_logs",
+        "ensure_task",
+        "run_task",
+        "wait_until_started",
+        "start",
+        "stop",
+        "status",
+        "main"
+      ],
+      "totalLines": 224,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/run_dynamic_web.cmd": {
+      "filePath": "scripts/run_dynamic_web.cmd",
+      "contentHash": "49860db9fd79b50f1bac0baa386b413284841578edba1a8e3ef625ea1a96fb1f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/scene_overlap_evaluation.py": {
+      "filePath": "scripts/scene_overlap_evaluation.py",
+      "contentHash": "bbdeaba1f0513e6cb420c3561ed6a050db27da8ef7df98b6454db130997298b2",
+      "functions": [
+        {
+          "name": "compute_overlap_matrix",
+          "params": [
+            "all_results",
+            "top_k"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "summarize_per_scene_quality",
+          "params": [
+            "all_results",
+            "top_k"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "compute_feature_distance_matrix",
+          "params": [
+            "all_results",
+            "top_k"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "compute_same_scene_drift",
+          "params": [
+            "old_results",
+            "new_results",
+            "top_k"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "run_comparison",
+          "params": [
+            "top_k"
+          ],
+          "exported": true,
+          "lineCount": 117
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "PROJECT_ROOT"
+          ]
+        },
+        {
+          "source": "data_loader",
+          "specifiers": [
+            "load_sample_spotify_data"
+          ]
+        },
+        {
+          "source": "preprocess",
+          "specifiers": [
+            "preprocess_songs"
+          ]
+        },
+        {
+          "source": "recommender",
+          "specifiers": [
+            "recommend_all_scenes",
+            "recommend_all_scenes_by_attributes"
+          ]
+        }
+      ],
+      "exports": [
+        "compute_overlap_matrix",
+        "summarize_per_scene_quality",
+        "compute_feature_distance_matrix",
+        "compute_same_scene_drift",
+        "run_comparison"
+      ],
+      "totalLines": 197,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/start_dynamic_web.cmd": {
+      "filePath": "scripts/start_dynamic_web.cmd",
+      "contentHash": "c63f8821e0135dc571acbbe95200e5862d85cb3b3664f26dfa6603ec0236aaf7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/start_dynamic_web.ps1": {
+      "filePath": "scripts/start_dynamic_web.ps1",
+      "contentHash": "7918ac41d784e68a0cede9505ae12f09ee9e3ce16a56f47d34fa27b6633ed1b7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/stop_dynamic_web.cmd": {
+      "filePath": "scripts/stop_dynamic_web.cmd",
+      "contentHash": "9db3b78219d7dc23852bbebca900423536e98ea71164eadd7307718b3504df5f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/stop_dynamic_web.ps1": {
+      "filePath": "scripts/stop_dynamic_web.ps1",
+      "contentHash": "2ddae33b2ab48e3b9c7fb23928a232953ae6268974f029f7896e7d489f5de941",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/visualize_recommendations.py": {
+      "filePath": "scripts/visualize_recommendations.py",
+      "contentHash": "2c43259aeea0a00ebc4f3613c8f0a946836488006d37fef27921ed343c68e97a",
+      "functions": [
+        {
+          "name": "load_data",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "collect_results",
+          "params": [
+            "songs_df",
+            "link_type"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "build_overlap_matrix",
+          "params": [
+            "results_map"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "plot_overlap_heatmap",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "plot_feature_comparison",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 50
+        },
+        {
+          "name": "plot_genre_distribution",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "plot_similarity_scores",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "plot_dashboard",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 80
+        },
+        {
+          "name": "print_stats",
+          "params": [
+            "old_results",
+            "new_results",
+            "songs_df"
+          ],
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "matplotlib",
+          "specifiers": [
+            "matplotlib"
+          ]
+        },
+        {
+          "source": "matplotlib.pyplot",
+          "specifiers": [
+            "plt"
+          ]
+        },
+        {
+          "source": "matplotlib.ticker",
+          "specifiers": [
+            "mticker"
+          ]
+        },
+        {
+          "source": "seaborn",
+          "specifiers": [
+            "sns"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "PROJECT_ROOT",
+            "PROCESSED_SONGS_CSV",
+            "DEFAULT_TOP_K",
+            "FEATURE_KEYS"
+          ]
+        },
+        {
+          "source": "data_loader",
+          "specifiers": [
+            "load_sample_spotify_data"
+          ]
+        },
+        {
+          "source": "preprocess",
+          "specifiers": [
+            "preprocess_songs"
+          ]
+        },
+        {
+          "source": "recommender",
+          "specifiers": [
+            "recommend",
+            "recommend_all_scenes",
+            "recommend_all_scenes_by_attributes"
+          ]
+        },
+        {
+          "source": "scene_mapper",
+          "specifiers": [
+            "list_scenes"
+          ]
+        },
+        {
+          "source": "attribute_mapper",
+          "specifiers": [
+            "list_scene_prototypes"
+          ]
+        },
+        {
+          "source": "matplotlib.font_manager",
+          "specifiers": [
+            "fm"
+          ]
+        }
+      ],
+      "exports": [
+        "load_data",
+        "collect_results",
+        "build_overlap_matrix",
+        "plot_overlap_heatmap",
+        "plot_feature_comparison",
+        "plot_genre_distribution",
+        "plot_similarity_scores",
+        "plot_dashboard",
+        "print_stats",
+        "main"
+      ],
+      "totalLines": 441,
+      "hasStructuralAnalysis": true
+    },
+    "share/README.md": {
+      "filePath": "share/README.md",
+      "contentHash": "06d7ecab95b926b00eda9d2845f1a0bcaf66b4a11cd05b2fbc7712c2de1dbf45",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "share/data/share-data.js": {
+      "filePath": "share/data/share-data.js",
+      "contentHash": "b3f129aebeb979a7176f3030083872b2a4496fb6542439903667f3c0b927acd3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1404,
+      "hasStructuralAnalysis": true
+    },
+    "share/index.html": {
+      "filePath": "share/index.html",
+      "contentHash": "16665ed45217d0ea4ac66bb315cfd69854e7da198e364a03e9686fc7bf6a66ca",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1247,
+      "hasStructuralAnalysis": false
+    },
+    "share/intro.md": {
+      "filePath": "share/intro.md",
+      "contentHash": "5fba1e762fb025b9b0dc5781501bd8bf61a7f1268ce8f0fb1b7b82225c665be2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": true
+    },
+    "src/api.py": {
+      "filePath": "src/api.py",
+      "contentHash": "c61b7cf3f369ad321c94175905ded84cf24afd417f79e127562cbe64cb94e06f",
+      "functions": [
+        {
+          "name": "load_data",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "df_to_response",
+          "params": [
+            "df",
+            "scene"
+          ],
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "image_recommend_to_response",
+          "params": [
+            "data"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 56
+        },
+        {
+          "name": "attribute_recommend_to_response",
+          "params": [
+            "data"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 35
+        },
+        {
+          "name": "get_scenes",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "recommend_by_scene",
+          "params": [],
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "recommend_by_scene_attributes",
+          "params": [],
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "recommend_by_image_endpoint",
+          "params": [],
+          "exported": true,
+          "lineCount": 41
+        },
+        {
+          "name": "health",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "index",
+          "params": [
+            "path"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "tempfile",
+          "specifiers": [
+            "tempfile"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "flask",
+          "specifiers": [
+            "Flask",
+            "request",
+            "jsonify",
+            "render_template",
+            "send_from_directory"
+          ]
+        },
+        {
+          "source": "werkzeug.exceptions",
+          "specifiers": [
+            "NotFound"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "PROJECT_ROOT",
+            "PROCESSED_SONGS_CSV",
+            "DEFAULT_TOP_K"
+          ]
+        },
+        {
+          "source": "scene_mapper",
+          "specifiers": [
+            "list_scenes",
+            "get_scene_profile"
+          ]
+        },
+        {
+          "source": "recommender",
+          "specifiers": [
+            "recommend",
+            "recommend_by_image",
+            "recommend_by_attribute_scores"
+          ]
+        },
+        {
+          "source": "attribute_mapper",
+          "specifiers": [
+            "list_scene_prototypes",
+            "get_scene_attribute_scores"
+          ]
+        }
+      ],
+      "exports": [
+        "load_data",
+        "df_to_response",
+        "image_recommend_to_response",
+        "attribute_recommend_to_response",
+        "get_scenes",
+        "recommend_by_scene",
+        "recommend_by_scene_attributes",
+        "recommend_by_image_endpoint",
+        "health",
+        "index"
+      ],
+      "totalLines": 322,
+      "hasStructuralAnalysis": true
+    },
+    "src/attribute_mapper.py": {
+      "filePath": "src/attribute_mapper.py",
+      "contentHash": "b8bf8e2fb7f06cb920e7e3efad1189411e0ac19612c5b4b3abb88e201dbc8718",
+      "functions": [
+        {
+          "name": "load_scene_attributes_config",
+          "params": [
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_get_mapping_rules",
+          "params": [
+            "config",
+            "key"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "get_music_target_weight_rules",
+          "params": [
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_current_dataset_genre_prior_rules",
+          "params": [
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "list_attributes",
+          "params": [
+            "path"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "list_scene_prototypes",
+          "params": [
+            "path"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_attribute_definition",
+          "params": [
+            "attribute_name",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "get_scene_prototype",
+          "params": [
+            "scene_name",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_get_score_range",
+          "params": [
+            "config"
+          ],
+          "returnType": "tuple[float, float]",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_clip_value",
+          "params": [
+            "value",
+            "min_score",
+            "max_score"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "normalize_attribute_scores",
+          "params": [
+            "attribute_scores",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "get_scene_attribute_scores",
+          "params": [
+            "scene_name",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "attribute_scores_to_array",
+          "params": [
+            "attribute_scores",
+            "path"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_weighted_sum",
+          "params": [
+            "attribute_scores",
+            "rule"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_tempo_to_norm",
+          "params": [
+            "tempo",
+            "songs_df"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "map_attributes_to_music_targets",
+          "params": [
+            "attribute_scores",
+            "songs_df",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "map_attributes_to_tolerances",
+          "params": [
+            "attribute_scores",
+            "songs_df",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "map_attributes_to_genre_priors",
+          "params": [
+            "attribute_scores",
+            "available_genres",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "select_preferred_genres",
+          "params": [
+            "genre_priors",
+            "top_n",
+            "min_score"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "get_attribute_ranking_weights",
+          "params": [
+            "attribute_scores",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "build_target_array",
+          "params": [
+            "music_targets",
+            "songs_df"
+          ],
+          "returnType": "list[float]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "match_scene_prototypes",
+          "params": [
+            "attribute_scores",
+            "top_k",
+            "path"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "summarize_attribute_scores",
+          "params": [
+            "attribute_scores",
+            "top_n",
+            "path"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "get_feature_importance",
+          "params": [
+            "attribute_scores",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "build_attribute_profile",
+          "params": [
+            "scene_name",
+            "attribute_scores",
+            "songs_df",
+            "top_genres",
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 35
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Iterable",
+            "Optional"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "CONFIGS_DIR",
+            "FEATURE_KEYS"
+          ]
+        }
+      ],
+      "exports": [
+        "load_scene_attributes_config",
+        "_get_mapping_rules",
+        "get_music_target_weight_rules",
+        "get_current_dataset_genre_prior_rules",
+        "list_attributes",
+        "list_scene_prototypes",
+        "get_attribute_definition",
+        "get_scene_prototype",
+        "_get_score_range",
+        "_clip_value",
+        "normalize_attribute_scores",
+        "get_scene_attribute_scores",
+        "attribute_scores_to_array",
+        "_weighted_sum",
+        "_tempo_to_norm",
+        "map_attributes_to_music_targets",
+        "map_attributes_to_tolerances",
+        "map_attributes_to_genre_priors",
+        "select_preferred_genres",
+        "get_attribute_ranking_weights",
+        "build_target_array",
+        "match_scene_prototypes",
+        "summarize_attribute_scores",
+        "get_feature_importance",
+        "build_attribute_profile"
+      ],
+      "totalLines": 369,
+      "hasStructuralAnalysis": true
+    },
+    "src/config.py": {
+      "filePath": "src/config.py",
+      "contentHash": "31397c0be36767c1c93808f57a00518b371b78ca5e8d70cec8eb63658d42be7d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/data_loader.py": {
+      "filePath": "src/data_loader.py",
+      "contentHash": "a0401e089ffd2cedf529edf14de9a450f27c8d8749f699aa39c771d0102f72d4",
+      "functions": [
+        {
+          "name": "load_sample_spotify_data",
+          "params": [
+            "csv_path"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "RAW_SPOTIFY_CSV"
+          ]
+        }
+      ],
+      "exports": [
+        "load_sample_spotify_data"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/main.py": {
+      "filePath": "src/main.py",
+      "contentHash": "454784f6991969537ddb398f86be83fe0718c24ada8f5f32b9f2159393751544",
+      "functions": [
+        {
+          "name": "print_summary",
+          "params": [
+            "df"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "print_recommendations",
+          "params": [
+            "results",
+            "title"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "mode_all_scenes",
+          "params": [
+            "processed_df"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "mode_scene",
+          "params": [
+            "processed_df",
+            "scene",
+            "top_k",
+            "use_attributes"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "mode_image",
+          "params": [
+            "processed_df",
+            "image_path",
+            "top_k",
+            "classifier",
+            "clip_checkpoint",
+            "use_attributes"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "traceback",
+          "specifiers": [
+            "traceback"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "PROCESSED_SONGS_CSV",
+            "RAW_SPOTIFY_CSV",
+            "DEFAULT_TOP_K"
+          ]
+        },
+        {
+          "source": "data_loader",
+          "specifiers": [
+            "load_sample_spotify_data"
+          ]
+        },
+        {
+          "source": "preprocess",
+          "specifiers": [
+            "preprocess_songs",
+            "save_processed_songs"
+          ]
+        },
+        {
+          "source": "recommender",
+          "specifiers": [
+            "recommend_all_scenes",
+            "recommend",
+            "recommend_by_image",
+            "recommend_by_attribute_scores",
+            "recommend_all_scenes_by_attributes"
+          ]
+        }
+      ],
+      "exports": [
+        "print_summary",
+        "print_recommendations",
+        "mode_all_scenes",
+        "mode_scene",
+        "mode_image",
+        "main"
+      ],
+      "totalLines": 188,
+      "hasStructuralAnalysis": true
+    },
+    "src/preprocess.py": {
+      "filePath": "src/preprocess.py",
+      "contentHash": "520305a5ddf66c6f1d9343870c050014b327011ef2127a73ec6d29b944953ddf",
+      "functions": [
+        {
+          "name": "preprocess_songs",
+          "params": [
+            "raw_df"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "save_processed_songs",
+          "params": [
+            "df",
+            "output_path"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "NUMERIC_FEATURES",
+            "PROCESSED_SONGS_CSV",
+            "STANDARD_COLUMNS"
+          ]
+        }
+      ],
+      "exports": [
+        "preprocess_songs",
+        "save_processed_songs"
+      ],
+      "totalLines": 61,
+      "hasStructuralAnalysis": true
+    },
+    "src/ranker.py": {
+      "filePath": "src/ranker.py",
+      "contentHash": "11148b1fc8d0e6b400b56c69254d0a066382b1f822c07ce9467d84f583837b54",
+      "functions": [
+        {
+          "name": "compute_cosine_similarity",
+          "params": [
+            "song_vectors",
+            "target_vector",
+            "feature_weights"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "compute_genre_prior_score",
+          "params": [
+            "songs_df",
+            "genre_priors"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "compute_genre_match_score",
+          "params": [
+            "songs_df",
+            "preferred_genres",
+            "preferred_subgenres",
+            "genre_priors"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "compute_popularity_score",
+          "params": [
+            "songs_df"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "compute_diversity_penalty",
+          "params": [
+            "songs_df",
+            "selected_indices",
+            "artist_penalty",
+            "genre_penalty"
+          ],
+          "returnType": "np.ndarray",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "generate_recommendation_reason",
+          "params": [
+            "attribute_profile"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "rank",
+          "params": [
+            "candidates",
+            "target_vector",
+            "preferred_genres",
+            "preferred_subgenres",
+            "weights",
+            "top_k",
+            "genre_priors",
+            "feature_weights"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 62
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "FEATURE_KEYS"
+          ]
+        }
+      ],
+      "exports": [
+        "compute_cosine_similarity",
+        "compute_genre_prior_score",
+        "compute_genre_match_score",
+        "compute_popularity_score",
+        "compute_diversity_penalty",
+        "generate_recommendation_reason",
+        "rank"
+      ],
+      "totalLines": 183,
+      "hasStructuralAnalysis": true
+    },
+    "src/recall.py": {
+      "filePath": "src/recall.py",
+      "contentHash": "d9a65bd5fbd5de24a337d88179401b3810de6156f42eeb5d85c0ebcd826c2b0f",
+      "functions": [
+        {
+          "name": "recall_by_genre",
+          "params": [
+            "songs_df",
+            "preferred_genres",
+            "preferred_subgenres",
+            "min_candidates"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "recall_by_features",
+          "params": [
+            "candidates",
+            "target_features",
+            "tolerances",
+            "min_candidates"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "recall_by_feature_scoring",
+          "params": [
+            "candidates",
+            "target_features",
+            "tolerances",
+            "pool_size"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "select_recall_pool",
+          "params": [
+            "candidates",
+            "pool_size",
+            "seed"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "recall",
+          "params": [
+            "songs_df",
+            "preferred_genres",
+            "preferred_subgenres",
+            "target_features",
+            "tolerances",
+            "pool_size",
+            "use_soft_scoring"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "FEATURE_KEYS",
+            "RECALL_CANDIDATE_POOL_SIZE"
+          ]
+        }
+      ],
+      "exports": [
+        "recall_by_genre",
+        "recall_by_features",
+        "recall_by_feature_scoring",
+        "select_recall_pool",
+        "recall"
+      ],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    "src/recommender.py": {
+      "filePath": "src/recommender.py",
+      "contentHash": "fdeac757a855e39916faf9beac172eeaaf052867853a52481d97cdfce706c0b8",
+      "functions": [
+        {
+          "name": "recommend",
+          "params": [
+            "scene",
+            "songs_df",
+            "top_k",
+            "pool_size"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "recommend_all_scenes",
+          "params": [
+            "songs_df",
+            "top_k"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "recommend_by_attributes",
+          "params": [
+            "attribute_profile",
+            "songs_df",
+            "top_k",
+            "pool_size"
+          ],
+          "returnType": "pd.DataFrame",
+          "exported": true,
+          "lineCount": 41
+        },
+        {
+          "name": "recommend_by_attribute_scores",
+          "params": [
+            "songs_df",
+            "attribute_scores",
+            "scene_name",
+            "top_k",
+            "pool_size"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "recommend_all_scenes_by_attributes",
+          "params": [
+            "songs_df",
+            "top_k"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "_get_classifier",
+          "params": [
+            "clip_checkpoint_path"
+          ],
+          "returnType": "BaseSceneClassifier",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "recommend_by_image",
+          "params": [
+            "image_path",
+            "songs_df",
+            "top_k",
+            "pool_size",
+            "classifier_prefer",
+            "clip_checkpoint_path",
+            "use_attributes"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 61
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "DEFAULT_TOP_K",
+            "RECALL_CANDIDATE_POOL_SIZE",
+            "FEATURE_KEYS",
+            "PROJECT_ROOT"
+          ]
+        },
+        {
+          "source": "scene_mapper",
+          "specifiers": [
+            "list_scenes",
+            "get_preferred_genres",
+            "get_preferred_subgenres",
+            "get_target_features",
+            "get_tolerances",
+            "get_ranking_weights",
+            "get_target_array",
+            "get_scene_profile"
+          ]
+        },
+        {
+          "source": "recall",
+          "specifiers": [
+            "recall"
+          ]
+        },
+        {
+          "source": "ranker",
+          "specifiers": [
+            "rank",
+            "generate_recommendation_reason"
+          ]
+        },
+        {
+          "source": "vision.scene_classifier",
+          "specifiers": [
+            "get_scene_classifier",
+            "BaseSceneClassifier"
+          ]
+        },
+        {
+          "source": "attribute_mapper",
+          "specifiers": [
+            "build_attribute_profile",
+            "list_scene_prototypes",
+            "get_feature_importance"
+          ]
+        }
+      ],
+      "exports": [
+        "recommend",
+        "recommend_all_scenes",
+        "recommend_by_attributes",
+        "recommend_by_attribute_scores",
+        "recommend_all_scenes_by_attributes",
+        "_get_classifier",
+        "recommend_by_image"
+      ],
+      "totalLines": 238,
+      "hasStructuralAnalysis": true
+    },
+    "src/scene_mapper.py": {
+      "filePath": "src/scene_mapper.py",
+      "contentHash": "397a55fa12ea930c01d2fd49c6ed1b04f0f200b0b6671c3c8af0ec4ca834cf7f",
+      "functions": [
+        {
+          "name": "load_scene_profiles",
+          "params": [
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "list_scenes",
+          "params": [],
+          "returnType": "list",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_scene_profile",
+          "params": [
+            "scene"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "get_target_features",
+          "params": [
+            "scene",
+            "songs_df"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "get_preferred_genres",
+          "params": [
+            "scene"
+          ],
+          "returnType": "list",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_preferred_subgenres",
+          "params": [
+            "scene"
+          ],
+          "returnType": "list",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_tolerances",
+          "params": [
+            "scene",
+            "songs_df"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "get_ranking_weights",
+          "params": [
+            "scene"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_target_array",
+          "params": [
+            "scene",
+            "songs_df"
+          ],
+          "returnType": "list",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "SCENE_PROFILES_JSON",
+            "FEATURE_KEYS"
+          ]
+        }
+      ],
+      "exports": [
+        "load_scene_profiles",
+        "list_scenes",
+        "get_scene_profile",
+        "get_target_features",
+        "get_preferred_genres",
+        "get_preferred_subgenres",
+        "get_tolerances",
+        "get_ranking_weights",
+        "get_target_array"
+      ],
+      "totalLines": 73,
+      "hasStructuralAnalysis": true
+    },
+    "src/templates/index.html": {
+      "filePath": "src/templates/index.html",
+      "contentHash": "7a5986112fe0100837fc2a9948784945b13e625948ce4f6b0918197a9264e30f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 271,
+      "hasStructuralAnalysis": false
+    },
+    "src/test.py": {
+      "filePath": "src/test.py",
+      "contentHash": "cf603e7740f7f7cbf211c7b240f8426c0bf602353290cdb3c9a52adbb0dfaec1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "src/vision/__init__.py": {
+      "filePath": "src/vision/__init__.py",
+      "contentHash": "f609bde29fc1a22d0a74bf130d55561428244550c7c6b65e171cb07f9a69ef69",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": ".scene_classifier",
+          "specifiers": [
+            "get_scene_classifier",
+            "BaseSceneClassifier"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "src/vision/scene_classifier.py": {
+      "filePath": "src/vision/scene_classifier.py",
+      "contentHash": "94d313c436bb1571e68c47ace6dce3fe2ced98d09da577f83eefbfe344768e4c",
+      "functions": [
+        {
+          "name": "get_scene_classifier",
+          "params": [
+            "prefer",
+            "clip_checkpoint_path"
+          ],
+          "returnType": "BaseSceneClassifier",
+          "exported": true,
+          "lineCount": 31
+        }
+      ],
+      "classes": [
+        {
+          "name": "BaseSceneClassifier",
+          "methods": [
+            "classify",
+            "model_name"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "MockSceneClassifier",
+          "methods": [
+            "model_name",
+            "_extract_color_stats",
+            "_score_scene",
+            "classify"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 78
+        },
+        {
+          "name": "CLIPSceneClassifier",
+          "methods": [
+            "__init__",
+            "_resolve_checkpoint_path",
+            "model_name",
+            "_lazy_load",
+            "classify"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 95
+        }
+      ],
+      "imports": [
+        {
+          "source": "abc",
+          "specifiers": [
+            "ABC",
+            "abstractmethod"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "numpy",
+          "specifiers": [
+            "np"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "DEFAULT_CLIP_CHECKPOINT",
+            "DEFAULT_CLIP_MODEL_NAME",
+            "DEFAULT_CLIP_PRETRAINED_TAG",
+            "PROJECT_ROOT"
+          ]
+        },
+        {
+          "source": "scene_mapper",
+          "specifiers": [
+            "list_scenes"
+          ]
+        }
+      ],
+      "exports": [
+        "BaseSceneClassifier",
+        "MockSceneClassifier",
+        "CLIPSceneClassifier",
+        "get_scene_classifier"
+      ],
+      "totalLines": 260,
+      "hasStructuralAnalysis": true
+    },
+    "test_vision.py": {
+      "filePath": "test_vision.py",
+      "contentHash": "51625fdfdca8588621f560e81a22a6759ac839bfda61a50b53d3e7759d606d73",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "traceback",
+          "specifiers": [
+            "traceback"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

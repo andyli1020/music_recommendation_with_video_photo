@@ -13,7 +13,8 @@ python scripts/build_share_bundle.py
 运行后会自动生成：
 
 - `share/data/share-data.js`：静态页面所需的预生成推荐数据
-- `share/assets/images/*.jpg`：示例图片副本
+- `share/assets/images/*.jpg`：场景示例图副本
+- `share/assets/diagrams/*`：产品设计图与技术架构图副本
 
 ## 如何分享
 
@@ -38,6 +39,8 @@ share/index.html
 - 每个场景的关键属性、流派先验、目标音乐特征
 - Top-K 推荐歌曲列表
 - 每个场景对应的示例图片
+- 当前项目的产品需求设计图
+- 当前项目的推荐技术架构图
 
 ## 限制说明
 

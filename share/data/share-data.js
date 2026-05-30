@@ -2,7 +2,7 @@ window.SHARE_DATA = {
   "meta": {
     "project_name": "视界伴音",
     "subtitle": "视觉场景感知的音乐推荐系统",
-    "generated_at": "2026-05-03T11:49:30+08:00",
+    "generated_at": "2026-05-24T10:14:23+08:00",
     "top_k": 10,
     "songs_count": 28356,
     "share_mode": "static-demo",
@@ -12,11 +12,16 @@ window.SHARE_DATA = {
       "若需实时上传图片推理，请继续使用原 Flask 应用。"
     ]
   },
+  "assets": {
+    "product_design_image": "assets/diagrams/product-need.png",
+    "architecture_image": "assets/diagrams/structure-v3.png"
+  },
   "scenes": [
     {
       "id": "cafe",
       "label": "咖啡厅",
       "icon": "☕",
+      "hero_image": "assets/images/cafe-muji.jpg",
       "description": "咖啡厅 / 安静放松、轻社交、轻度工作",
       "prototype_tags": [
         "indoor",
@@ -285,6 +290,7 @@ window.SHARE_DATA = {
       "id": "study_room",
       "label": "书房",
       "icon": "📚",
+      "hero_image": "assets/images/study-room-library.jpg",
       "description": "书房/学习空间 / 低能量、高专注、安静稳定",
       "prototype_tags": [
         "indoor",
@@ -553,6 +559,7 @@ window.SHARE_DATA = {
       "id": "gym",
       "label": "健身房",
       "icon": "💪",
+      "hero_image": "assets/images/gym-interior.jpg",
       "description": "健身房 / 高能量、快节奏、激励型运动环境",
       "prototype_tags": [
         "indoor",
@@ -821,6 +828,7 @@ window.SHARE_DATA = {
       "id": "night_street",
       "label": "夜晚街道",
       "icon": "🌃",
+      "hero_image": "assets/images/night-dotonbori.jpg",
       "description": "夜晚街道 / 都市夜色、中等能量、冷感沉浸",
       "prototype_tags": [
         "outdoor",
@@ -1089,6 +1097,7 @@ window.SHARE_DATA = {
       "id": "mountain",
       "label": "山野户外",
       "icon": "🏔️",
+      "hero_image": "assets/images/mountain-catoctin.jpg",
       "description": "山地/户外自然场景 / 开阔、自然、略带力量感",
       "prototype_tags": [
         "outdoor",
@@ -1359,35 +1368,35 @@ window.SHARE_DATA = {
       "id": "cafe",
       "label": "☕ 咖啡厅",
       "scene_id": "cafe",
-      "image": "assets/images/cafe.jpg",
+      "image": "assets/images/cafe-muji.jpg",
       "description": "示例图片，对应场景：咖啡厅"
     },
     {
       "id": "study_room",
       "label": "📚 书房",
       "scene_id": "study_room",
-      "image": "assets/images/study_room.jpg",
+      "image": "assets/images/study-room-library.jpg",
       "description": "示例图片，对应场景：书房"
     },
     {
       "id": "gym",
       "label": "💪 健身房",
       "scene_id": "gym",
-      "image": "assets/images/gym.jpg",
+      "image": "assets/images/gym-interior.jpg",
       "description": "示例图片，对应场景：健身房"
     },
     {
       "id": "night_street",
       "label": "🌃 夜晚街道",
       "scene_id": "night_street",
-      "image": "assets/images/night_street.jpg",
+      "image": "assets/images/night-dotonbori.jpg",
       "description": "示例图片，对应场景：夜晚街道"
     },
     {
       "id": "mountain",
       "label": "🏔️ 山野户外",
       "scene_id": "mountain",
-      "image": "assets/images/mountain.jpg",
+      "image": "assets/images/mountain-catoctin.jpg",
       "description": "示例图片，对应场景：山野户外"
     }
   ]

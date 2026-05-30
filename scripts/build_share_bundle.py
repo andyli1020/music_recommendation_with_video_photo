@@ -14,7 +14,10 @@ SRC_DIR = PROJECT_ROOT / "src"
 SHARE_DIR = PROJECT_ROOT / "share"
 SHARE_DATA_DIR = SHARE_DIR / "data"
 SHARE_ASSETS_DIR = SHARE_DIR / "assets" / "images"
-SOURCE_IMAGE_DIR = PROJECT_ROOT / "data" / "test_images"
+SHARE_DIAGRAM_DIR = SHARE_DIR / "assets" / "diagrams"
+SOURCE_IMAGE_DIR = PROJECT_ROOT / "frontend" / "public" / "scenes"
+PRODUCT_NEED_IMAGE = PROJECT_ROOT / "doc" / "product need.png"
+ARCHITECTURE_IMAGE = PROJECT_ROOT / "frontend" / "public" / "architecture" / "structure-v3.png"
 
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
@@ -40,6 +43,14 @@ SCENE_ICONS = {
     "mountain": "🏔️",
 }
 
+SCENE_IMAGE_FILES = {
+    "cafe": "cafe-muji.jpg",
+    "study_room": "study-room-library.jpg",
+    "gym": "gym-interior.jpg",
+    "night_street": "night-dotonbori.jpg",
+    "mountain": "mountain-catoctin.jpg",
+}
+
 RECOMMENDATION_COLUMNS = [
     "rank",
     "title",
@@ -62,6 +73,19 @@ RECOMMENDATION_COLUMNS = [
 def _ensure_share_dirs() -> None:
     SHARE_DATA_DIR.mkdir(parents=True, exist_ok=True)
     SHARE_ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    SHARE_DIAGRAM_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _clear_directory(directory: Path) -> None:
+    if not directory.exists():
+        directory.mkdir(parents=True, exist_ok=True)
+        return
+
+    for item in directory.iterdir():
+        if item.is_dir():
+            shutil.rmtree(item)
+        else:
+            item.unlink()
 
 
 def _normalize_value(value):
@@ -86,10 +110,12 @@ def _serialize_recommendations(df: pd.DataFrame) -> list[dict]:
 def _build_scene_payload(scene_name: str, songs_df: pd.DataFrame, top_k: int) -> dict:
     result = recommend_by_attribute_scores(songs_df=songs_df, scene_name=scene_name, top_k=top_k)
     prototype = get_scene_prototype(scene_name)
+    hero_image = _copy_scene_image(scene_name)
     return {
         "id": scene_name,
         "label": SCENE_LABELS.get(scene_name, scene_name),
         "icon": SCENE_ICONS.get(scene_name, ""),
+        "hero_image": hero_image,
         "description": prototype.get("description", ""),
         "prototype_tags": prototype.get("prototype_tags", []),
         "recommendation_reason": result.get("recommendation_reason", ""),
@@ -104,12 +130,21 @@ def _build_scene_payload(scene_name: str, songs_df: pd.DataFrame, top_k: int) ->
 
 
 def _copy_scene_image(scene_name: str) -> str | None:
-    source = SOURCE_IMAGE_DIR / f"{scene_name}.jpg"
+    source_name = SCENE_IMAGE_FILES.get(scene_name, f"{scene_name}.jpg")
+    source = SOURCE_IMAGE_DIR / source_name
     if not source.exists():
         return None
     target = SHARE_ASSETS_DIR / source.name
     shutil.copy2(source, target)
     return f"assets/images/{target.name}"
+
+
+def _copy_diagram(source: Path, target_name: str) -> str | None:
+    if not source.exists():
+        return None
+    target = SHARE_DIAGRAM_DIR / target_name
+    shutil.copy2(source, target)
+    return f"assets/diagrams/{target.name}"
 
 
 def _build_samples(scene_payloads: list[dict]) -> list[dict]:
@@ -132,6 +167,8 @@ def _build_samples(scene_payloads: list[dict]) -> list[dict]:
 
 def build_share_bundle(top_k: int = DEFAULT_TOP_K) -> Path:
     _ensure_share_dirs()
+    _clear_directory(SHARE_ASSETS_DIR)
+    _clear_directory(SHARE_DIAGRAM_DIR)
 
     if not PROCESSED_SONGS_CSV.exists():
         raise FileNotFoundError(
@@ -155,6 +192,10 @@ def build_share_bundle(top_k: int = DEFAULT_TOP_K) -> Path:
                 "页面内展示的是预生成推荐结果，不依赖 Flask 服务。",
                 "若需实时上传图片推理，请继续使用原 Flask 应用。",
             ],
+        },
+        "assets": {
+            "product_design_image": _copy_diagram(PRODUCT_NEED_IMAGE, "product-need.png"),
+            "architecture_image": _copy_diagram(ARCHITECTURE_IMAGE, "structure-v3.png"),
         },
         "scenes": scene_payloads,
         "samples": _build_samples(scene_payloads),
